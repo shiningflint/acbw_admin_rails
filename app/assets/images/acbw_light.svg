@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<style>#A, #B, #C, #W {fill:#e6e5e5;}</style>
+<g id="Letters">
+	<path id="W" d="M278.922,289.758h7.2l29.761,106.723h0.32l30.24-106.723h8.801l30.721,106.723h0.319l29.28-106.723h7.521
+		L390.284,404h-8l-31.36-108.162h-0.32L319.723,404h-7.84L278.922,289.758z"/>
+	<path id="B" d="M107.681,289.758h45.761c27.201,0,36.001,14.88,36.001,29.6c0,12.32-8.96,22.721-22.241,24.321l0.32,0.319
+		c3.041-0.479,25.761,4.961,25.761,28.001c0,20.801-16,32.001-39.841,32.001h-45.761V289.758z M114.721,341.599h38.721
+		c19.041,0,28.96-9.601,28.96-23.521c0-16.48-13.76-22.24-28.96-22.24h-38.721V341.599z M114.721,397.92h38.721
+		c20.161,0,32.801-8.961,32.801-25.921c0-19.521-17.76-24.32-32.801-24.32h-38.721V397.92z"/>
+	<path id="C" d="M393.725,133.838c-3.041-19.201-19.842-30.721-38.882-30.721c-29.921,0-47.36,24.48-47.36,53.761
+		c0,29.28,17.439,53.761,47.36,53.761c22.241,0,39.521-19.841,40.802-41.121h7.039c-2.56,27.201-22.721,47.201-47.841,47.201
+		c-34.241,0-54.401-26.401-54.401-59.841c0-33.441,20.16-59.842,54.401-59.842c40.481,0,45.761,35.201,45.921,36.801H393.725z"/>
+	<path id="A" d="M152.242,99.757L197.363,214h-7.52l-14.4-36.641h-54.721L106.161,214h-7.52l45.921-114.243H152.242z
+		 M173.203,171.279l-24.48-64.641h-0.32l-25.441,64.641H173.203z"/>
+</g>
+<line id="mainvert" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" x1="248.5" y1="440" x2="248.5" y2="60"/>
+<line id="mainhori" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" x1="60" y1="251.5" x2="440" y2="251.5"/>
+<g id="Guides" display="none">
+</g>
+<g id="Cross">
+
+		<line id="crossvert" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" x1="248.5" y1="39" x2="248.5" y2="60"/>
+
+		<line id="crosshori" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" x1="236" y1="52.5" x2="260" y2="52.5"/>
+</g>
+<rect id="square" x="237.5" y="441.5" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" width="22" height="23"/>
+<circle id="circle" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" cx="45" cy="251.5" r="14"/>
+<polygon id="triangle" fill="none" stroke="#e6e5e5" stroke-width="3" stroke-miterlimit="10" points="441.5,236.105
+	467.949,251.376 441.5,266.646 "/>
+</svg>
