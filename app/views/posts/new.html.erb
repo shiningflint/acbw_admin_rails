@@ -1,23 +1,7 @@
 <!--▼▼Content▼▼-->
 <div class="content-wrap">
   <div class="sidenav-wrap">
-    <ul class="sidenav-ul">
-      <li class="sidenav-item">
-        <%= link_to image_tag("acbw_allpath.svg"), posts_path, class: "sidenav-icon sidenav-icon_logo" %>
-      </li>
-      <li class="sidenav-item">
-        <%= link_to image_tag("post-it_white.svg"), posts_path, class: "sidenav-icon sidenav-icon_active" %>
-      </li>
-      <li class="sidenav-item">
-        <%= link_to image_tag("add.svg"), new_post_path, class: "sidenav-icon" %>
-      </li>
-      <li class="sidenav-item">
-        <%= link_to image_tag("cat.svg"), "#", class: "sidenav-icon" %>
-      </li>
-      <li class="sidenav-item">
-        <%= link_to image_tag("settings.svg"), "#", class: "sidenav-icon" %>
-      </li>
-    </ul>
+    <%= render partial: "posts/adminnav", locals: {active: 'newpost'} %>
   </div>
 
   <form action="preview.php" id="post-form" class="post-form" method="post">
