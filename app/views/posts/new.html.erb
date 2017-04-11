@@ -26,14 +26,14 @@
             <p>Second content example</p>
           </div>
         </div>
-        <%= hidden_field_tag :content %>
+        <%= f.hidden_field :content %>
       </div>
     </div>
 
     <div class="pside">
       <div class="block block_padding">
         <p class="publ" id="publishwrap"><button type="button" id="published" class="publ-btn publ-btn_published">Published</button><button type="button" id="unpublished" class="publ-btn publ-btn_unpublished active">Unpublished</button>
-        <%= hidden_field_tag :status, value: "unpublished" %>
+        <%= f.hidden_field :status, value: "unpublished" %>
         </p>
         <p>Post Date</p>
         <p class="datef">

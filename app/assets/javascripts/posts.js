@@ -131,7 +131,7 @@ function removeEdit(blockString) {
 //call function if element exists
 document.addEventListener("DOMContentLoaded", function(e) {
   if(document.getElementById("postf-content") != null) {
-    postInit(".post-block", "postf-content", "content", "new-block", "new-img", "del-block", "create-post", "post-form");
-    publishInit("publishwrap", "status");
+    postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "create-post", "post-form");
+    publishInit("publishwrap", "post_status");
   }
 });
