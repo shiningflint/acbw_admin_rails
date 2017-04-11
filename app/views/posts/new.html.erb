@@ -4,13 +4,13 @@
     <%= render partial: "posts/adminnav", locals: {active: 'newpost'} %>
   </div>
 
-  <form action="preview.php" id="post-form" class="post-form" method="post">
+  <%= form_for @post, url: posts_path, html: {id: "post-form", class: "post-form"} do |f| %>
     <div class="main-wrap main-wrap_postf">
       <div class="block block_nocolor block_nopadding">
         <h1 class="title">New Post</h1>
       </div>
       <div class="block block_nopadding input-title">
-        <input type="text" placeholder="Post Title" class="input">
+        <%= f.text_field :title, placeholder: "Post Title", class: "input" %>
       </div>
       <div class="postf">
         <ul class="postf-ul">
@@ -26,14 +26,14 @@
             <p>Second content example</p>
           </div>
         </div>
-        <input type="hidden" id="postfid" name="postfid">
+        <%= hidden_field_tag :content %>
       </div>
     </div>
 
     <div class="pside">
       <div class="block block_padding">
         <p class="publ" id="publishwrap"><button type="button" id="published" class="publ-btn publ-btn_published">Published</button><button type="button" id="unpublished" class="publ-btn publ-btn_unpublished active">Unpublished</button>
-        <input type="hidden" id="publinput" name="publinput" value="unpublished">
+        <%= hidden_field_tag :status, value: "unpublished" %>
         </p>
         <p>Post Date</p>
         <p class="datef">
@@ -83,6 +83,6 @@
         <a href="index.php" class="btn">Back</a>
       </div>
     </div>
-  </form>
+  <% end %>
 </div>
 <!--▲▲Content▲▲-->
