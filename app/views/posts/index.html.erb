@@ -18,30 +18,14 @@
           </tr>
         </thead>
         <tbody class="table-body">
+          <% @posts.each do |post| %>
           <tr>
-            <td><a href="edit-post.php">Wadabory Park</a></td>
-            <td><a href="#">Tokyo Cycling Diary</a></td>
-            <td><a href="#" class="posts-published">Published</a></td>
-            <td>2016/09/12</td>
+            <td><%= link_to post.title, edit_post_path(post.id) %></td>
+            <td><%= link_to "Tokyo Cycling Diary", edit_post_path(post.id) %></td>
+            <td><%= link_to post.status, edit_post_path(post.id), class: "posts-"+post.status %></td>
+            <td><%= post.date %></td>
           </tr>
-          <tr>
-            <td><a href="edit-post.php">Cycling Through Rainbow Bridge to Odaiba</a></td>
-            <td><a href="#">Tokyo Cycling Diary</a></td>
-            <td><a href="#" class="posts-unpublished">Unpublished</a></td>
-            <td>2016/09/24</td>
-          </tr>
-          <tr>
-            <td><a href="edit-post.php">Tokyo Gate Bridge</a></td>
-            <td><a href="#">Tokyo Cycling Diary</a></td>
-            <td><a href="#" class="posts-unpublished">Unpublished</a></td>
-            <td>2016/11/01</td>
-          </tr>
-          <tr>
-            <td><a href="edit-post.php">Tokyo Bay Aqua Line Entrance</a></td>
-            <td><a href="#">Tokyo Cycling Diary</a></td>
-            <td><a href="#" class="posts-published">Published</a></td>
-            <td>2016/10/06</td>
-          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

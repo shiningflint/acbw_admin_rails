@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
   end
 
   def new
@@ -7,7 +8,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    render plain: params[:post].inspect
+    @post = Post.new(post_params)
+    @post.save
+    redirect_to posts_path
+    # render plain: params[:post].inspect
+  end
+
+  def edit
   end
 
   private
