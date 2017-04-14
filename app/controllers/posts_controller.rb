@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_action :authorize
+
   def index
     @posts = Post.all
   end
