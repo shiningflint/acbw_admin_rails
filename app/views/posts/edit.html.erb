@@ -18,9 +18,7 @@
           <li class="postf-item"><button type="button" id="new-img" class="btn">New Image</button></li>
           <li class="postf-item"><button type="button" id="del-block" class="btn">Delete Block</button></li>
         </ul>
-        <div id="postf-content" class="postf-content">
-          <%=raw @post.content %>
-        </div>
+        <div id="postf-content" class="postf-content"><%=raw @post.content %></div>
         <%= f.hidden_field :content %>
       </div>
     </div>
