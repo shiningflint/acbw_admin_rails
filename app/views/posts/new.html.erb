@@ -1,7 +1,7 @@
 <!--▼▼Content▼▼-->
 <div class="content-wrap">
   <div class="sidenav-wrap">
-    <%= render partial: "posts/adminnav", locals: {active: 'newpost'} %>
+    <%= render partial: "common/adminnav", locals: {active: 'newpost'} %>
   </div>
 
   <%= form_for @post, url: posts_path, html: {id: "post-form", class: "post-form"} do |f| %>
@@ -52,24 +52,12 @@
       <div class="block">
         <p class="category-title">Category</p>
         <ul class="catlist">
+          <% @categories.each do |category| %>
           <li class="catlist-item">
-            <label>
-              <input type="radio" name="category" value="tokyo-cycling-diary" checked>
-              <span>Tokyo Cycling Diary</span>
-            </label>
+            <%= f.radio_button :category_id, category.id %>
+            <%= f.label :category_id, category.category_name, value: category.id %>
           </li>
-          <li class="catlist-item">
-            <label>
-              <input type="radio" name="category" value="tokyo-cycling-diary">
-              <span>Life in Japan</span>
-            </label>
-          </li>
-          <li class="catlist-item">
-            <label>
-              <input type="radio" name="category" value="tokyo-cycling-diary">
-              <span>Bicycles</span>
-            </label>
-          </li>
+          <% end %>
         </ul>
       </div>
       <div class="block add-del">

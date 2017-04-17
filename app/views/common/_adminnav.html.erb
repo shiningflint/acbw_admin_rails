@@ -17,7 +17,11 @@
     <% end %>
   </li>
   <li class="sidenav-item">
-    <%= link_to image_tag("cat.svg"), "#", class: "sidenav-icon" %>
+    <% if active == 'categories' %>
+    <%= link_to image_tag("cat_white.svg"), categories_path, class: "sidenav-icon sidenav-icon_active" %>
+    <% else %>
+    <%= link_to image_tag("cat.svg"), categories_path, class: "sidenav-icon" %>
+    <% end %>
   </li>
   <li class="sidenav-item">
     <%= link_to image_tag("settings.svg"), "#", class: "sidenav-icon" %>

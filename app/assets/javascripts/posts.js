@@ -17,24 +17,14 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 	newBlock.addEventListener("click", function(e) {
 		var blockEl = document.createElement("div");
 		var blockP = document.createElement("p");
+
 		blockEl.classList.add("post-block");
 		blockEl.contentEditable = true;
 		blockP.innerHTML = "New Block";
 		blockEl.appendChild(blockP);
 
-		blockEl.addEventListener("focus", function(e) {
-			currentBlock = e.target;
-			return;
-		}, false);
+		addBlock(blockEl);
 
-		if(currentBlock == null) {
-			return content.appendChild(blockEl).focus();
-		}
-
-		if(currentBlock != null) {
-			insertAfter(blockEl, currentBlock);
-			return blockEl.focus();
-		}
 		return;
 	}, false);
 
@@ -43,11 +33,15 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 		var blockImg = document.createElement("img");
 		var imgSrc = prompt("Put img URL below");
 
+		blockEl.contentEditable = true;
+		blockEl.className += "post-block";
+		blockImg.className += "post-block-image";
 		blockImg.src = imgSrc;
 		blockEl.appendChild(blockImg);
 
-		console.log(blockEl);
-		console.log(blockImg);
+		addBlock(blockEl);
+
+		return;
 	}, false);
 
 	delBlock.addEventListener("click", function(e) {
@@ -74,6 +68,23 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 			blocks[i].addEventListener("focus", function(e) {
 				currentBlock = e.target;
 			}, false);
+		}
+		return;
+	}
+
+	function addBlock(blockEl) {
+		blockEl.addEventListener("focus", function(e) {
+			currentBlock = e.target;
+			return;
+		}, false);
+
+		if(currentBlock == null) {
+			return content.appendChild(blockEl).focus();
+		}
+
+		if(currentBlock != null) {
+			insertAfter(blockEl, currentBlock);
+			return blockEl.focus();
 		}
 		return;
 	}

@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 	get "/admin", to: "posts#index"
 
 	resources :posts
+	resources :categories
 end

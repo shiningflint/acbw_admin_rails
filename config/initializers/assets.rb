@@ -9,6 +9,8 @@ Rails.application.config.assets.precompile += %w( posts.css )
 Rails.application.config.assets.precompile += %w( posts.js )
 Rails.application.config.assets.precompile += %w( sessions.css )
 Rails.application.config.assets.precompile += %w( sessions.js )
+Rails.application.config.assets.precompile += %w( categories.css )
+Rails.application.config.assets.precompile += %w( categories.js )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
