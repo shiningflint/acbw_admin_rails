@@ -4,7 +4,7 @@
     <%= render partial: "common/adminnav", locals: {active: 'category-edit'} %>
   </div>
 
-  <%= form_for :category, url: categories_path, html: {class: "post-form"} do |f| %>
+  <%= form_for :category, url: category_path(@category), method: :patch, html: {class: "post-form"} do |f| %>
     <div class="main-wrap main-wrap_cat">
       <div class="block block_nocolor block_nopadding">
         <h1 class="title">Edit Category</h1>

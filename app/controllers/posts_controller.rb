@@ -16,14 +16,17 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@category = Category.find(params[:post][:category_id])
+		@post = @category.posts.create(post_params)
 		@post.save
 		redirect_to posts_path
 	end
 
 	def update
+		category = Category.find(params[:post][:category_id])
 		@post = Post.find(params[:id])
-		@post.update(post_params)
+		@post.update_attributes(post_params)
+		# @post.update(post_params)
 		redirect_to posts_path
 	end
 
@@ -35,6 +38,6 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.require(:post).permit(:title, :content, :status, :date)
+			params.require(:post).permit(:title, :content, :status, :date, :category_id)
 		end
 end
