@@ -1,6 +1,6 @@
 "use strict";
 
-function postInit(blockString, contentString, contentInput, newBlockString, newImgString, delBlockString, sendBtnString, postFormString) {
+function postInit(blockString, contentString, contentInput, newBlockString, newImgString, delBlockString, sendBtnString, postFormString, dateStr, yearStr, monthStr, dayStr) {
 	var content = document.getElementById(contentString);
 	var input = document.getElementById(contentInput);
 	var newBlock = document.getElementById(newBlockString);
@@ -9,7 +9,24 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 	var postBlocks = document.querySelectorAll(blockString);
 	var sendBtn = document.getElementById(sendBtnString);
 	var postForm = document.getElementById(postFormString);
+	var dateTxt = document.getElementById(dateStr);
+	var dateObj = null;
+	var postYear = document.getElementById(yearStr);
+	var postMonth = document.getElementById(monthStr);
+	var postDay = document.getElementById(dayStr);
 	var currentBlock = null;
+
+	if (dateTxt.hasAttribute("value")) {
+		dateObj = new Date(dateTxt.value);
+		postYear.value = dateObj.getFullYear();
+		postMonth.value = dateObj.getMonth();
+		postDay.value = dateObj.getDate();
+	} else {
+		dateObj = new Date();
+		postYear.value = dateObj.getFullYear();
+		postMonth.value = dateObj.getMonth();
+		postDay.value = dateObj.getDate();
+	}
 
 	setEdit(blockString);
 	addFocusEvent(postBlocks);
@@ -57,6 +74,9 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 	}, false);
 
 	sendBtn.addEventListener("click", function(e) {
+		var dateObjPost = new Date(Date.UTC(postYear.value, postMonth.value, postDay.value));
+		var datePost = dateObjPost.toISOString().substr(0, 10);
+		dateTxt.value = datePost;
 		removeEdit(blockString);
 		input.value = content.innerHTML;
 		return postForm.submit();
@@ -142,7 +162,7 @@ function removeEdit(blockString) {
 //call function if element exists
 document.addEventListener("DOMContentLoaded", function(e) {
   if(document.getElementById("postf-content") != null) {
-    postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "create-post", "post-form");
+    postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "create-post", "post-form", "post_date", "postyear", "postmonth", "postday");
     publishInit("publishwrap", "post_status");
   }
 });

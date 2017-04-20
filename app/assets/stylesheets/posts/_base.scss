@@ -43,6 +43,13 @@ button::-moz-focus-inner {border: 0;padding: 0;}
 	margin-bottom: 0;
 	overflow: auto;
 }
+.block_add-del {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 0;
+	background-color: transparent;
+}
 .block_loginbtn {
 	background-color: transparent;
 	text-align: center;
@@ -76,9 +83,14 @@ a {
 .btn_add {
 	background-color: #2d537d;
 	border: 1px solid #5c7fa7;
+	margin-left: $bfont;
 	&:hover {
 		background-color: #375c86;
 	}
+}
+.btn_catadd {
+	margin-left: 0;
+	margin-right: $bfont;
 }
 .txt-noblock {color:$blockcol;}
 
@@ -314,14 +326,6 @@ a {
 .category-title {
 	font-size: 1.618em;
 	margin-bottom: $bfont/2;
-}
-
-/*ADD DELETE*/
-.add-del {
-	display: flex;
-	justify-content: space-between;
-	padding: 0;
-	background-color: transparent;
 }
 
 /*LOGIN BOX*/
