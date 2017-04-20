@@ -4,71 +4,11 @@
     <%= render partial: "common/adminnav", locals: {active: 'editpost'} %>
   </div>
 
-  <%= form_for @post, url: post_path(@post), method: :patch, html: {id: "post-form", class: "post-form"} do |f| %>
-    <div class="main-wrap main-wrap_postf">
-      <div class="block block_nocolor block_nopadding">
-        <h1 class="title">Edit Post</h1>
-      </div>
-      <div class="block block_nopadding input-title">
-        <%= f.text_field :title, value: @post.title, placeholder: "Post Title", class: "input" %>
-      </div>
-      <div class="postf">
-        <ul class="postf-ul">
-          <li class="postf-item"><button type="button" id="new-block" class="btn">New Block</button></li>
-          <li class="postf-item"><button type="button" id="new-img" class="btn">New Image</button></li>
-          <li class="postf-item"><button type="button" id="del-block" class="btn">Delete Block</button></li>
-        </ul>
-        <div id="postf-content" class="postf-content"><%=raw @post.content %></div>
-        <%= f.hidden_field :content %>
-      </div>
-    </div>
-
-    <div class="pside">
-      <div class="block block_padding">
-        <% if @post.status == "published" %>
-        <p class="publ" id="publishwrap"><button type="button" id="published" class="publ-btn publ-btn_published active">Published</button><button type="button" id="unpublished" class="publ-btn publ-btn_unpublished">Unpublished</button>
-        <% else %>
-        <p class="publ" id="publishwrap"><button type="button" id="published" class="publ-btn publ-btn_published">Published</button><button type="button" id="unpublished" class="publ-btn publ-btn_unpublished active">Unpublished</button>
-        <% end %>
-        <%= f.hidden_field :status, value: @post.status %>
-        </p>
-        <p>Post Date</p>
-        <p class="datef">
-          <input type="text" placeholder="2017" class="datef-item" size="4">
-          <select name="postmonth" id="postmonth" class="datef-item">
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <input type="text" placeholder="26" class="datef-item" size="2">
-        </p>
-        <p><%= f.date_field :date, value: @post.date %></p>
-      </div>
-      <div class="block">
-        <p class="category-title">Category</p>
-        <ul class="catlist">
-          <% @categories.each do |category| %>
-          <li class="catlist-item">
-            <%= f.radio_button :category_id, category.id %>
-            <%= f.label :category_id, category.category_name, value: category.id %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="block add-del">
-        <button type="button" id="create-post" class="btn btn_add">Update Post!</button>
-        <%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Delete this post?'}, class: "btn" %>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: "common/postform", locals: {
+    url: post_path(@post),
+    method: :patch,
+    title: "Edit Post",
+    page: "edit"
+    } %>
 </div>
 <!--▲▲Content▲▲-->
