@@ -25,4 +25,5 @@ Things you may want to cover:
 
 Next To Do:
 
-* Authentication on posts (post title, post content, date, and category must not be empty)
+* Scope Post & Category controller under admin
+* Add post slug and do auto generate
