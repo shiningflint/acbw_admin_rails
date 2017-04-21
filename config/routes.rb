@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-	get "/login", to: "sessions#new"
-	post "/login", to: "sessions#create"
-	delete "/logout", to: "sessions#destroy"
+	get "/markas/login", to: "sessions#new"
+	post "/markas/login", to: "sessions#create"
+	delete "/markas/logout", to: "sessions#destroy"
 
-	get "/admin", to: "posts#index"
+	get "/markas", to: "posts#index"
 
-	resources :posts
-	resources :categories
+	scope '/markas' do
+		resources :posts, :categories
+	end
 end

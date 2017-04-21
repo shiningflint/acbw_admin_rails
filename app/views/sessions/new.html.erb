@@ -4,7 +4,7 @@
 		<div class="center mb2">
 			<%= image_tag "acbw_light.svg", class: "login-image" %>
 		</div>
-		<%= form_for :session, url: login_path, class: "login" do |f| %>
+		<%= form_for :session, url: markas_login_path, class: "login" do |f| %>
 			<div class="block block_nocolpad input-title">
 				<%= f.text_field :user, class: "input", placeholder: "Who are you?" %>
 			</div>
