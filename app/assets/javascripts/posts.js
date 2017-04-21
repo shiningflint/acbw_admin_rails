@@ -110,21 +110,31 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 	}
 }
 
-function publishInit(publishWrap, publishInput) {
+function publishInit(pubPubStr, pubUnpubStr, publishWrap, publishInput) {
 	var pubBtn = document.getElementById(publishWrap);
 	var pubInput = document.getElementById(publishInput);
+	var pubPublished = document.getElementById(pubPubStr);
+	var pubUnpublished = document.getElementById(pubUnpubStr);
+
+	updateUIStatus(pubInput.value)
 
 	pubBtn.addEventListener("click", function(e) {
 		if(e.target.id === "published") {
 			removeActive(pubBtn.childNodes);
-			e.target.classList.add("active");
-			pubInput.value = "published";
+			updateUIStatus(pubInput.value = "published")
 		} else {
 			removeActive(pubBtn.childNodes);
-			e.target.classList.add("active");
-			pubInput.value = "unpublished";
+			updateUIStatus(pubInput.value = "unpublished")
 		}
 	}, false);
+
+	function updateUIStatus(pubInputVal) {
+		if(pubInputVal == "published") {
+			pubPublished.classList.add("active");
+		} else {
+			pubUnpublished.classList.add("active");
+		}
+	}
 }
 
 function removeActive(nodes) {
@@ -163,6 +173,6 @@ function removeEdit(blockString) {
 document.addEventListener("DOMContentLoaded", function(e) {
   if(document.getElementById("postf-content") != null) {
     postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "create-post", "post-form", "post_date", "postyear", "postmonth", "postday");
-    publishInit("publishwrap", "post_status");
+    publishInit("published", "unpublished", "publishwrap", "post_status");
   }
 });

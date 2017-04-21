@@ -16,11 +16,13 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@category = Category.find(params[:post][:category_id])
+		params[:post][:category_id]? cat_id = params[:post][:category_id] : cat_id = 1
+		@category = Category.find(cat_id)
 		@post = @category.posts.create(post_params)
 		if @post.save
 			redirect_to posts_path
 		else
+			@categories = Category.all
 			render 'new'
 		end
 	end
@@ -29,7 +31,6 @@ class PostsController < ApplicationController
 		category = Category.find(params[:post][:category_id])
 		@post = Post.find(params[:id])
 		@post.update_attributes(post_params)
-		# @post.update(post_params)
 		redirect_to posts_path
 	end
 
