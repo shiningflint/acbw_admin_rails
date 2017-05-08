@@ -18,6 +18,7 @@
         <li class="postf-item"><button type="button" id="new-block" class="btn">New Block</button></li>
         <li class="postf-item"><button type="button" id="new-img" class="btn">New Image</button></li>
         <li class="postf-item"><button type="button" id="del-block" class="btn">Delete Block</button></li>
+        <li class="postf-item"><button type="button" id="edit-block" class="btn">Edit Block HTML</button></li>
       </ul>
       <div id="postf-content" class="postf-content"><% if @post.content %><%= @post.content.html_safe %><% else %><div class="post-block"><p>Insert content here</p></div><% end %></div>
       <%= f.hidden_field :content %>

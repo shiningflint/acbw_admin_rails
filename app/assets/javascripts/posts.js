@@ -1,11 +1,12 @@
 "use strict";
 
-function postInit(blockString, contentString, contentInput, newBlockString, newImgString, delBlockString, sendBtnString, postFormString, dateStr, yearStr, monthStr, dayStr) {
+function postInit(blockString, contentString, contentInput, newBlockString, newImgString, delBlockString, editBlockString, sendBtnString, postFormString, dateStr, yearStr, monthStr, dayStr) {
 	var content = document.getElementById(contentString);
 	var input = document.getElementById(contentInput);
 	var newBlock = document.getElementById(newBlockString);
 	var newImg = document.getElementById(newImgString);
 	var delBlock = document.getElementById(delBlockString);
+	var editBlock = document.getElementById(editBlockString);
 	var postBlocks = document.querySelectorAll(blockString);
 	var sendBtn = document.getElementById(sendBtnString);
 	var postForm = document.getElementById(postFormString);
@@ -68,6 +69,28 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 
 			parent.removeChild(delBlock);
 			currentBlock = null;
+			return;
+		}
+		return;
+	}, false);
+
+	editBlock.addEventListener("click", function(e) {
+		if(currentBlock != null) {
+			var txtArea = document.createElement("textarea");
+			var doneBtn = document.createElement("button");
+			doneBtn.setAttribute("type", "button");
+			doneBtn.setAttribute("class", "btn");
+			doneBtn.innerHTML = "Done Editing";
+			txtArea.setAttribute("rows", "12");
+			txtArea.setAttribute("style", "width:100%;");
+			txtArea.innerHTML = currentBlock.innerHTML;
+			currentBlock.innerHTML = "";
+			currentBlock.appendChild(txtArea);
+			currentBlock.appendChild(doneBtn);
+
+			doneBtn.addEventListener("click", function(e) {
+				currentBlock.innerHTML = txtArea.value;
+			}, false);
 			return;
 		}
 		return;
@@ -172,7 +195,7 @@ function removeEdit(blockString) {
 //call function if element exists
 document.addEventListener("DOMContentLoaded", function(e) {
   if(document.getElementById("postf-content") != null) {
-    postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "create-post", "post-form", "post_date", "postyear", "postmonth", "postday");
+    postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "edit-block", "create-post", "post-form", "post_date", "postyear", "postmonth", "postday");
     publishInit("published", "unpublished", "publishwrap", "post_status");
   }
 });
