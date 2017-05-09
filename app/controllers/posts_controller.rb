@@ -1,8 +1,14 @@
 class PostsController < ApplicationController
 	before_action :authorize
 
+	# sort posts by category
+	def catsort
+		@posts = Post.where(category_id: params[:category_id]);
+		render "index"
+	end
+
 	def index
-		@posts = Post.all
+		@posts = Post.all.order(date: :desc)
 	end
 
 	def new

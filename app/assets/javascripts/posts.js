@@ -38,7 +38,7 @@ function postInit(blockString, contentString, contentInput, newBlockString, newI
 
 		blockEl.classList.add("post-block");
 		blockEl.contentEditable = true;
-		blockP.innerHTML = "New Block";
+		blockP.innerHTML = "Block";
 		blockEl.appendChild(blockP);
 
 		addBlock(blockEl);
