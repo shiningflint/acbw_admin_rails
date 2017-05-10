@@ -25,6 +25,8 @@ class PostsController < ApplicationController
 		params[:post][:category_id]? cat_id = params[:post][:category_id] : cat_id = 1
 		@category = Category.find(cat_id)
 		@post = @category.posts.create(post_params)
+		sluggish = @post.title.downcase.parameterize
+		@post.slug = sluggish
 		if @post.save
 			redirect_to posts_path
 		else
@@ -36,6 +38,8 @@ class PostsController < ApplicationController
 	def update
 		category = Category.find(params[:post][:category_id])
 		@post = Post.find(params[:id])
+		sluggish = @post.title.downcase.parameterize
+		@post.slug = sluggish
 		@post.update_attributes(post_params)
 		redirect_to posts_path
 	end
@@ -48,6 +52,6 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.require(:post).permit(:title, :content, :status, :date, :category_id)
+			params.require(:post).permit(:title, :content, :status, :date, :slug, :category_id)
 		end
 end

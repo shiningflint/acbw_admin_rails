@@ -88,22 +88,36 @@
       <%= f.hidden_field :date %>
     </div>
     <div class="block block_flex">
-      <p class="category-title">Category</p>
-      <ul class="catlist">
-        <% @categories.each do |category| %>
-        <li class="catlist-item">
-          <%= f.radio_button :category_id, category.id %>
-          <%= f.label :category_id, category.category_name, value: category.id %>
-        </li>
+      <div class="block block_nopadding">
+        <p class="category-title">Category</p>
+        <ul class="catlist">
+          <% @categories.each do |category| %>
+          <li class="catlist-item">
+            <%= f.radio_button :category_id, category.id %>
+            <%= f.label :category_id, category.category_name, value: category.id %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="block block_nocolpad">
+        <p class="category-title">Main Pic</p>
+        <p class="mb1">No pic</p>
+        <button type="button" id="main-pic" class="btn">Add a Catchy One!</button>
+      </div>
+      <div class="block block_nocolpad">
+        <p class="category-title">Little Pic</p>
+        <p>No little pic</p>
+        <button type="button" id="thumb-pic" class="btn">Put a Little Pic!</button>
+      </div>
+      <div class="block block_nocolpad">
+        <% if @post.errors.any? %>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
         <% end %>
-      </ul>
-      <% if @post.errors.any? %>
-      <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-      <% end %>
+      </div>
     </div>
   </div>
 <% end %>
