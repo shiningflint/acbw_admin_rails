@@ -95,6 +95,16 @@ a {
 }
 .txt-noblock {color:$blockcol;}
 
+.block-separator {
+	display: block;
+	height: 1px;
+	width: 100%;
+	background-color: $bgcol;
+	margin: $bfont auto;
+	border: none;
+	opacity: 0.3;
+}
+
 /*CONTENT*/
 .content-wrap {
 	display: flex;
