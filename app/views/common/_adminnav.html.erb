@@ -25,9 +25,9 @@
   </li>
   <li class="sidenav-item">
     <% if active == 'settings' %>
-    <%= link_to image_tag("settings_white.svg"), settings_path, class: "sidenav-icon sidenav-icon_active" %>
+    <%= link_to image_tag("settings_white.svg"), setting_path(1), class: "sidenav-icon sidenav-icon_active" %>
     <% else %>
-    <%= link_to image_tag("settings.svg"), settings_path, class: "sidenav-icon" %>
+    <%= link_to image_tag("settings.svg"), setting_path(1), class: "sidenav-icon" %>
     <% end %>
   </li>
 </ul>
