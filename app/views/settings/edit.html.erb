@@ -9,7 +9,7 @@
     </div>
 
     <div class="block block_flex">
-      <%= form_for :setting, url: setting_path, method: :patch do |f| %>
+      <%= form_for :setting, url: setting_path(@photo_base), method: :patch do |f| %>
         <div class="mb1">
           <label>
             <h3><%= @photo_base.setting_name %></h3>

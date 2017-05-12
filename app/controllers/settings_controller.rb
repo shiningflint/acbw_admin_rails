@@ -7,7 +7,7 @@ class SettingsController < ApplicationController
 
   def update
     @photo_base = Setting.find(params[:id])
-    @photo_base.update(params.permit(:setting_name, :setting_value))
+    @photo_base.update(params.require(:setting).permit(:setting_name, :setting_value))
     redirect_to setting_path(@photo_base.id)
   end
 end
