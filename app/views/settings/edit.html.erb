@@ -1,0 +1,24 @@
+<div class="content-wrap">
+  <div class="sidenav-wrap">
+    <%= render partial: "common/adminnav", locals: {active: 'settings'} %>
+  </div>
+
+  <div class="main-wrap">
+    <div class="block block_nocolor block_nopadding">
+      <h1 class="title">Settings</h1>
+    </div>
+
+    <div class="block block_flex">
+      <%= form_for :setting, url: setting_path, method: :patch do |f| %>
+        <div class="mb1">
+          <label>
+            <h3><%= @photo_base.setting_name %></h3>
+            <%= f.hidden_field :setting_name, value: @photo_base.setting_name %>
+            <%= f.text_field :setting_value, value: @photo_base.setting_value %>
+          </label>
+        </div>
+        <p><%= f.submit "Update", class: "btn" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
