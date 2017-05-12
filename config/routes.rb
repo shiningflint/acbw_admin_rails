@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 	scope '/markas' do
 		resources :posts, :categories
 		get '/categories/:category_id/posts', to: "posts#catsort", as: "categories_posts"
+		get '/settings', to: "settings#index", as: "settings"
 	end
 end
