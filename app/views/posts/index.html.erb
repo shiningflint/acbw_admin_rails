@@ -21,7 +21,11 @@
           <% @posts.each do |post| %>
           <tr>
             <td><%= link_to post.title, edit_post_path(post.id) %></td>
-            <td><%= link_to post.category.category_name, categories_posts_path(post.category_id) %></td>
+            <% if post.category_id.present? %>
+              <td><%= link_to post.category.category_name, categories_posts_path(post.category_id) %></td>
+            <% else %>
+              <td>No category</td>
+            <% end %>
             <td><%= link_to post.status, edit_post_path(post.id), class: "posts-"+post.status %></td>
             <td><%= post.date %></td>
           </tr>
