@@ -6,10 +6,15 @@
 		</div>
 		<%= form_for :session, url: markas_login_path, class: "login" do |f| %>
 			<div class="block block_nocolpad input-title">
-				<%= f.text_field :user, class: "input", placeholder: "Who are you?" %>
+				<%= f.text_field :user, class: "input", placeholder: "Who are you?", id: "user-input" %>
 			</div>
 			<div class="block block_nocolpad input-title">
-				<%= f.password_field :password, class: "input", placeholder: "Is this really you?" %>
+				<%=
+					f.password_field :password,
+					class: "input",
+					placeholder: "Is this really you?",
+					id: "password-input" 
+				%>
 			</div>
 			<div class="block block_loginbtn">
 				<%= f.submit "Enter", class: "btn" %>
