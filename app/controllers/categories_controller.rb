@@ -23,18 +23,17 @@ class CategoriesController < ApplicationController
 
 	def update
 		@category = Category.find(params[:id])
-		@category.update(cat_params)
-		redirect_to categories_path
-	end
-
-	def destroy
-		@category = Category.find(params[:id])
-
-		if @category.destroy
+		if @category.update(cat_params)
 			redirect_to categories_path
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@category = Category.find(params[:id])
+		@category.destroy
+		redirect_to categories_path
 	end
 
 	private
