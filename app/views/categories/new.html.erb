@@ -4,25 +4,6 @@
     <%= render partial: "common/adminnav", locals: {active: 'category-new'} %>
   </div>
 
-  <%= form_for :category, url: categories_path, html: {class: "post-form"} do |f| %>
-    <div class="main-wrap main-wrap_cat">
-      <div class="block block_nocolor block_nopadding">
-        <h1 class="title">New Category</h1>
-      </div>
-      <div class="block block_nopadding input-title">
-        <%= f.text_field :category_name, placeholder: "Category Title", class: "input", autofocus: true %>
-      </div>
-      <div class="block block_nocolpad">
-        <%= f.submit "Add Category", class: "btn btn_add btn_catadd" %><%= link_to "Back", categories_path,class: "btn" %>
-      </div>
-      <% if @category.errors.any? %>
-      <ul>
-        <% @category.errors.full_messages.each do |msg| %>
-        <li class="txt-noblock"><%= msg %></li>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render "form", category: @category %>
 </div>
 <!--▲▲Content▲▲-->

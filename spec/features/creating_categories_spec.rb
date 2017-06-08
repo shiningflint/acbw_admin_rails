@@ -9,14 +9,14 @@ RSpec.feature "Adam can add a new category" do
 
   scenario "with valid attributes" do
     fill_in "category_category_name", with: "Banana posts"
-    click_button "Add Category"
+    click_button "Create Category"
 
     expect(page.current_url).to eq categories_url
     expect(page).to have_content "Banana posts"
   end
 
   scenario "not with invalid attributes" do
-    click_button "Add Category"
+    click_button "Create Category"
 
     expect(page).to have_content "Category name can't be blank"
   end
