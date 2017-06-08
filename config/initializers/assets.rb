@@ -7,8 +7,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 Rails.application.config.assets.precompile += %w( posts.css )
 Rails.application.config.assets.precompile += %w( posts.js )
-Rails.application.config.assets.precompile += %w( sessions.css )
-Rails.application.config.assets.precompile += %w( sessions.js )
 Rails.application.config.assets.precompile += %w( categories.css )
 Rails.application.config.assets.precompile += %w( categories.js )
 Rails.application.config.assets.precompile += %w( settings.css )

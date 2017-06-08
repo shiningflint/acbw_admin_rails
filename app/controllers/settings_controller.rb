@@ -1,5 +1,4 @@
 class SettingsController < ApplicationController
-  before_action :authorize
 
   def edit
     @photo_base = Setting.find(params[:id])

@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-	before_action :authorize
 
 	# sort posts by category
 	def catsort
