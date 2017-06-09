@@ -5,8 +5,11 @@
 
   <div class="main-wrap">
     <div class="block block_nocolor block_nopadding">
-      <h1 class="title">Posts</h1>
+      <h1 id="posts-index" class="title">Posts</h1>
     </div>
+    <% flash.each do |key, message| %>
+      <div class="flash-notice"><%= message %></div>
+    <% end %>
     <div class="tablewrap">
       <table class="table">
         <thead class="table-head table-head_posts">

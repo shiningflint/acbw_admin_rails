@@ -1,44 +1,52 @@
 class CategoriesController < ApplicationController
-	def index
-		@categories = Category.all
-	end
+  before_action :set_category, only: [:edit, :update, :destroy]
 
-	def new
-		@category = Category.new
-	end
+  def index
+    @categories = Category.all
+  end
 
-	def edit
-		@category = Category.find(params[:id])
-	end
+  def new
+    @category = Category.new
+  end
 
-	def create
-		@category = Category.new(cat_params)
+  def edit
+  end
 
-		if @category.save
-			redirect_to categories_path
-		else
-			render 'new'
-		end
-	end
+  def create
+    @category = Category.new(cat_params)
 
-	def update
-		@category = Category.find(params[:id])
-		@category.update(cat_params)
-		redirect_to categories_path
-	end
+    if @category.save
+      flash[:notice] = "Category created successfully."
+      redirect_to categories_path
+    else
+      render 'new'
+    end
+  end
 
-	def destroy
-		@category = Category.find(params[:id])
+  def update
+    if @category.update(cat_params)
+      flash[:notice] = "Category updated successfully."
+      redirect_to categories_path
+    else
+      render 'edit'
+    end
+  end
 
-		if @category.destroy
-			redirect_to categories_path
-		else
-			render 'edit'
-		end
-	end
+  def destroy
+    if @category.destroy
+      flash[:notice] = "Category deleted successfully."
+      redirect_to categories_path
+    else
+      render 'edit'
+    end
+  end
 
-	private
-		def cat_params
-			params.require(:category).permit(:category_name)
-		end
+  private
+    def cat_params
+      params.require(:category).permit(:category_name)
+    end
+
+    def set_category
+      @category = Category.find(params[:id])
+    end
 end

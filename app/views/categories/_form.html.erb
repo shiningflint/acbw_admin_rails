@@ -1,0 +1,33 @@
+<%= form_for category, html: {class: "post-form"} do |f| %>
+  <div class="main-wrap main-wrap_cat">
+    <div class="block block_nocolor block_nopadding">
+      <h1 class="title">
+        <%= category.new_record? ? "New Category" : "Edit Category" %>
+      </h1>
+    </div>
+    <div class="block block_nopadding input-title">
+      <%= f.text_field :category_name, placeholder: "Category Title",
+      class: "input", autofocus: true %>
+    </div>
+    <div class="block block_nocolpad">
+      <%= f.submit class: "btn btn_add btn_catadd" %>
+      <% if category.new_record?%>
+        <%= link_to("Back", categories_path, class: "btn") %>
+      <% else %>
+        <%= link_to("Delete Category",
+          category_path(@category),
+          method: :delete,
+          data: {confirm: 'Delete this category?'},
+          class: "btn")
+        %>
+      <% end %>
+    </div>
+    <% if category.errors.any? %>
+    <ul>
+      <% category.errors.full_messages.each do |msg| %>
+      <li class="error-message"><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+<% end %>

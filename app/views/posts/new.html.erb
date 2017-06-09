@@ -4,11 +4,6 @@
     <%= render partial: "common/adminnav" %>
   </div>
 
-  <%= render partial: "common/postform", locals: {
-    url: posts_path,
-    method: :post,
-    title: "New Post",
-    page: "new"
-    } %>
+  <%= render "form", post: @post, categories: @categories %>
 </div>
 <!--▲▲Content▲▲-->
