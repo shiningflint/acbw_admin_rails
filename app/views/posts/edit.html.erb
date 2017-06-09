@@ -3,12 +3,7 @@
   <div class="sidenav-wrap">
     <%= render partial: "common/adminnav" %>
   </div>
-
-  <%= render partial: "common/postform", locals: {
-    url: post_path(@post),
-    method: :patch,
-    title: "Edit Post",
-    page: "edit"
-    } %>
+  
+  <%= render "form", post: @post, categories: @categories %>
 </div>
 <!--▲▲Content▲▲-->

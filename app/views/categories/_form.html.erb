@@ -2,11 +2,7 @@
   <div class="main-wrap main-wrap_cat">
     <div class="block block_nocolor block_nopadding">
       <h1 class="title">
-        <% if category.new_record? %>
-        New Category
-        <% else %>
-        Edit Category
-        <% end %>
+        <%= category.new_record? ? "New Category" : "Edit Category" %>
       </h1>
     </div>
     <div class="block block_nopadding input-title">

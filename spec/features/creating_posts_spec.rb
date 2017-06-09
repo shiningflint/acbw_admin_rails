@@ -17,7 +17,7 @@ RSpec.configure do |config|
   end
 end
 
-RSpec.feature "Adam can create new posts" do
+RSpec.feature "Adam can create new post" do
   let!(:category) { FactoryGirl.create(:category, category_name: "Photo Walk") }
 
   scenario "with valid attributes", js: true do
@@ -32,8 +32,7 @@ RSpec.feature "Adam can create new posts" do
     choose "Photo Walk"
 
     click_button "Create Post!"
-    sleep 1
-    expect(page.current_path).to eq posts_path
+    page.should have_selector("#posts-index")
     expect(page).to have_content "Crossing the Rainbow Bridge to Odaiba"
     expect(page).to have_content "Photo Walk"
     expect(page).to have_content "2016-04-10"

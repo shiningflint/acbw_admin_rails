@@ -1,12 +1,19 @@
-<%= form_for @post, url: url, method: method, html: {id: "post-form", class: "post-form"} do |f| %>
+<%= form_for post, html: {id: "post-form", class: "post-form"} do |f| %>
   <div class="main-wrap main-wrap_postf">
     <div class="block block_add-del">
-      <h1 class="title"><%= title %></h1>
+      <h1 id="<%= post.new_record? ? "new-post" : "edit-post" %>" class="title">
+        <%= post.new_record? ? "New Post" : "Edit Post" %>
+      </h1>
       <div>
-        <% if page == 'new' %>
-        <%= link_to "Back", posts_path, class: "btn" %><button type="button" id="create-post" class="btn btn_add">Create Post!</button>
+        <% if post.new_record? %>
+          <%= link_to "Back", posts_path, class: "btn" %>
+          <button type="button" id="create-post" class="btn btn_add">Create Post!</button>
         <% else %>
-        <%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Delete this post?'}, class: "btn" %><button type="button" id="create-post" class="btn btn_add">Update Post!</button>
+          <%= link_to "Delete Post", post_path(@post),
+            method: :delete,
+            data: {confirm: 'Delete this post?'},
+            class: "btn" %>
+          <button type="button" id="create-post" class="btn btn_add">Update Post!</button>
         <% end %>
       </div>
     </div>
@@ -20,7 +27,13 @@
         <li class="postf-item"><button type="button" id="new-img" class="btn">New Image</button></li>
         <li class="postf-item"><button type="button" id="del-block" class="btn">Delete Block</button></li>
       </ul>
-      <div id="postf-content" class="postf-content"><% if @post.content %><%= @post.content.html_safe %><% else %><div class="post-block"><p>Insert content here</p></div><% end %></div>
+      <div id="postf-content" class="postf-content">
+        <% if post.content %>
+          <%= post.content.html_safe %>
+        <% else %>
+          <div class="post-block"><p>Insert content here</p></div>
+        <% end %>
+      </div>
       <%= f.hidden_field :content %>
     </div>
   </div>
@@ -28,8 +41,8 @@
   <div class="pside">
     <div class="block block_padding">
       <p class="publ" id="publishwrap"><button type="button" id="published" class="publ-btn publ-btn_published">Published</button><button type="button" id="unpublished" class="publ-btn publ-btn_unpublished">Unpublished</button>
-      <% if @post.status %>
-      <%= f.hidden_field :status, value: @post.status %>
+      <% if post.status %>
+      <%= f.hidden_field :status, value: post.status %>
       <% else %>
       <%= f.hidden_field :status, value: "unpublished" %>
       <% end %>
@@ -91,7 +104,7 @@
       <div class="block block_nopadding">
         <p class="category-title">Category</p>
         <ul class="catlist">
-          <% @categories.each do |category| %>
+          <% categories.each do |category| %>
           <li class="catlist-item">
             <%= f.radio_button :category_id, category.id %>
             <%= f.label :category_id, category.category_name, value: category.id %>
@@ -112,9 +125,9 @@
         <button type="button" id="thumb-pic" class="btn">Put a Little Pic!</button>
       </div>
       <div class="block block_nocolpad">
-        <% if @post.errors.any? %>
+        <% if post.errors.any? %>
         <ul>
-          <% @post.errors.full_messages.each do |msg| %>
+          <% post.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
           <% end %>
         </ul>
