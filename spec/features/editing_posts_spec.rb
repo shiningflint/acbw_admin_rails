@@ -17,15 +17,18 @@ RSpec.configure do |config|
   end
 end
 
-RSpec.feature "Adam can edit existing post", js: true do
+RSpec.feature "Adam can edit existing post" do
   let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
   let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
   let!(:post) { FactoryGirl.create :post, category: category }
 
-  scenario "with valid attributes" do
+  before do
     visit posts_path
     click_link "A test post"
-    page.should have_selector("#edit-post")
+    expect(page).to have_selector("#edit-post")
+  end
+
+  scenario "with valid attributes", js: true do
     fill_in "post_title", with: "Wadabori Park"
     click_button "new-block"
     fill_in "postyear", with: "2010"
@@ -34,13 +37,19 @@ RSpec.feature "Adam can edit existing post", js: true do
     choose "Tokyo Cycling Diary"
     click_button "Update Post!"
 
-    page.should have_selector("#posts-index")
-    expect(page.current_path).to eq posts_path
+    sleep 1
+    expect(page).to have_content "Post has been updated successfully."
     expect(page).to have_content "Wadabori Park"
     expect(page).to_not have_content "A test post"
     expect(page).to have_content "Tokyo Cycling Diary"
     expect(page).to_not have_content "Life in Tokyo"
     expect(page).to have_content "2010-12-01"
     expect(page).to_not have_content "2017-06-07"
+  end
+
+  scenario "not with invalid attributes", js: true do
+    fill_in "post_title", with: ""
+    click_button "Update Post!"
+    expect(page).to have_content "Title can't be blank"
   end
 end

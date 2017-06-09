@@ -20,6 +20,15 @@
     <div class="block block_nopadding input-title">
       <%= f.text_field :title, placeholder: "Post Title", class: "input", autofocus: true %>
     </div>
+    <div class="block block_nocolpad">
+      <% if post.errors.any? %>
+      <ul>
+        <% post.errors.full_messages.each do |msg| %>
+        <li class="error-message"><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
     <div class="postf">
       <ul class="postf-ul">
         <li class="postf-item"><button type="button" id="new-block" class="btn">New Block</button></li>
@@ -123,15 +132,6 @@
         <p class="category-title">Little Pic</p>
         <p class="mb1">No little pic</p>
         <button type="button" id="thumb-pic" class="btn">Put a Little Pic!</button>
-      </div>
-      <div class="block block_nocolpad">
-        <% if post.errors.any? %>
-        <ul>
-          <% post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </ul>
-        <% end %>
       </div>
     </div>
   </div>

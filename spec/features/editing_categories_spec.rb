@@ -12,6 +12,7 @@ RSpec.feature "Adam can edit existing category" do
     fill_in "category_category_name", with: "Potato posts"
     click_button "Update Category"
 
+    expect(page).to have_content "Category updated successfully."
     expect(page).to have_content "Potato posts"
     expect(page).to_not have_content "Life in Tokyo"
   end
@@ -21,6 +22,7 @@ RSpec.feature "Adam can edit existing category" do
     fill_in "category_category_name", with: "Banana posts"
     click_button "Update Category"
 
+    expect(page).to have_content "Category updated successfully."
     expect(page).to have_content "Banana posts"
     expect(page).to_not have_content "Life in Tokyo"
   end

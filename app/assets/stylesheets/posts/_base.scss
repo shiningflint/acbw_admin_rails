@@ -14,8 +14,8 @@ html, body {height: 100%;}
 html {box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit;}
 img {
-	max-width: 100%;
-	vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 body {font-family: $family;}
 p {color: $bgcol;}
@@ -29,323 +29,346 @@ button::-moz-focus-inner {border: 0;padding: 0;}
 .mb2 {margin-bottom: $bfont*2;}
 .invert {color: $blockcol;}
 .block {
-	margin-bottom: $bfont;
-	background-color: $blockcol;
-	padding: $bfont;
+  margin-bottom: $bfont;
+  background-color: $blockcol;
+  padding: $bfont;
 }
 .block_nocolor {background-color: transparent;}
 .block_nopadding {padding: 0;}
 .block_nocolpad {
-	background-color: transparent;
-	padding: 0;
+  background-color: transparent;
+  padding: 0;
 }
 .block_flex{
-	flex: 1;
-	margin-bottom: 0;
-	overflow: auto;
+  flex: 1;
+  margin-bottom: 0;
+  overflow: auto;
 }
 .block_add-del {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	padding: 0;
-	background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0;
+  background-color: transparent;
 }
 .block_loginbtn {
-	background-color: transparent;
-	text-align: center;
-	padding: 0;
-	margin-bottom: 0;
-	margin-top: 40px;
+  background-color: transparent;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 40px;
 }
 a {
-	color: $link;
-	text-decoration: none;
-	&:hover {
-		text-decoration: underline;
-	}
+  color: $link;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .btn {
-	display: inline-block;
-	vertical-align: middle;
-	border: 1px solid #825353;
-	background-color: $link;
-	color: white;
-	padding: ($bfont/2) $bfont;
-	cursor: pointer;
-	text-decoration: none;
-	font-size: 1em;
-	line-height: 1;
-	&:hover {
-		text-decoration: none;
-		background-color: #9e6363;
-	}
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #825353;
+  background-color: $link;
+  color: white;
+  padding: ($bfont/2) $bfont;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1;
+  &:hover {
+    text-decoration: none;
+    background-color: #9e6363;
+  }
 }
 .btn_add {
-	background-color: #2d537d;
-	border: 1px solid #5c7fa7;
-	margin-left: $bfont;
-	&:hover {
-		background-color: #375c86;
-	}
+  background-color: #2d537d;
+  border: 1px solid #5c7fa7;
+  margin-left: $bfont;
+  &:hover {
+    background-color: #375c86;
+  }
 }
 .btn_catadd {
-	margin-left: 0;
-	margin-right: $bfont;
+  margin-left: 0;
+  margin-right: $bfont;
 }
 .txt-noblock {color:$blockcol;}
 
 .block-separator {
-	display: block;
-	height: 1px;
-	width: 100%;
-	background-color: $bgcol;
-	margin: $bfont auto;
-	border: none;
-	opacity: 0.3;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: $bgcol;
+  margin: $bfont auto;
+  border: none;
+  opacity: 0.3;
 }
 
 /*CONTENT*/
 .content-wrap {
-	display: flex;
-	font-size: $bfont;
-	padding: $bfont;
-	background-color: $bgcol;
-	height: 100%;
+  display: flex;
+  font-size: $bfont;
+  padding: $bfont;
+  background-color: $bgcol;
+  height: 100%;
 }
 .content-wrap_login {
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .sidenav-wrap {
-	width: 60px;
-	margin-right: $bfont;
-	background-color: $blockcol;
+  width: 60px;
+  margin-right: $bfont;
+  background-color: $blockcol;
 }
 
 /*NAVIGATION*/
 .sidenav-icon {
-	display: block;
-	padding: $bfont;
-	&:hover {
-		background-color: gainsboro;
-	}
-	> img {
-		width: 100%;
-	}
+  display: block;
+  padding: $bfont;
+  &:hover {
+    background-color: gainsboro;
+  }
+  > img {
+    width: 100%;
+  }
 }
 .sidenav-icon_active {
-	background-color: $link;
-	&:hover {
-		background-color: $link;
-	}
+  background-color: $link;
+  &:hover {
+    background-color: $link;
+  }
 }
 .sidenav-icon_logo {
-	padding: 4px;
-	margin-bottom: 21px;
+  padding: 4px;
+  margin-bottom: 21px;
 }
 
 /*MAIN*/
 .main-wrap {
-	display: flex;
-	flex-direction: column;
-	width: calc(100% - 76px);
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 76px);
 }
 .main-wrap_postf {
-	width: 70%;
+  width: 70%;
 }
 .main-wrap_cat {width: 100%;}
 .title {
-	font-size: 4.236em;
-	font-family: $admin-title;
-	color: $blockcol;
+  font-size: 4.236em;
+  font-family: $admin-title;
+  color: $blockcol;
 }
 .title_mb {margin-bottom: $bfont;}
 
 /*TABLE*/
 .tablewrap {
-	background-color: $blockcol;
-	font-family: $admin-txt;
-	flex: 1;
-	overflow: auto;
+  background-color: $blockcol;
+  font-family: $admin-txt;
+  flex: 1;
+  overflow: auto;
 }
 .table {
-	table-layout: fixed;
-	width: 100%;
+  table-layout: fixed;
+  width: 100%;
 }
 .table-head {
-	font-size: 1.618em;
-	th {
-		background-color: #985d5d;
-		color: white;
-		text-align: center;
-		padding: $bfont 0;
-		&:first-child {
-			text-align: left;
-			padding: $bfont 0 $bfont $bfont;
-		}
-		&:last-child {
-			padding: $bfont $bfont $bfont 0;
-		}
-	}
+  font-size: 1.618em;
+  th {
+    background-color: #985d5d;
+    color: white;
+    text-align: center;
+    padding: $bfont 0;
+    &:first-child {
+      text-align: left;
+      padding: $bfont 0 $bfont $bfont;
+    }
+    &:last-child {
+      padding: $bfont $bfont $bfont 0;
+    }
+  }
 }
 .th_posts-title {width: 60%;}
 .th_posts-category {width: 16%;}
 .th_posts-updated {width: 14%;}
 .th_posts-status {width: 10%;}
 .table-body {
-	> tr {
-		&:nth-child(even) {
-			background-color: gainsboro;
-		}
-		> td {
-			text-align: center;
-			padding: $bfont 0;
-			&:first-child {
-				padding-left: $bfont;
-				text-align: left;
-			}
-			&:nth-child(2) {
-				font-size: 0.618em;
-			}
-			&:nth-child(3) {
-				font-size: 0.618em;
-			}
-			&:last-child {
-				padding-right: $bfont;
-				font-size: 0.618em;
-			}
-		}
-	}
+  > tr {
+    &:nth-child(even) {
+      background-color: gainsboro;
+    }
+    > td {
+      text-align: center;
+      padding: $bfont 0;
+      &:first-child {
+        padding-left: $bfont;
+        text-align: left;
+      }
+      &:nth-child(2) {
+        font-size: 0.618em;
+      }
+      &:nth-child(3) {
+        font-size: 0.618em;
+      }
+      &:last-child {
+        padding-right: $bfont;
+        font-size: 0.618em;
+      }
+    }
+  }
 }
 .posts-published {color: $link}
 .posts-unpublished {color: #4e8cd4;}
 
 /*POST FORM*/
 .post-form {
-	display: flex;
-	width: calc(100% - 76px);
+  display: flex;
+  width: calc(100% - 76px);
 }
 .input-title,
 .postf {
-	font-family: $admin-txt;
+  font-family: $admin-txt;
 }
 .postf {
-	position: relative;
-	background-color: $blockcol;
-	padding: 47px $bfont $bfont $bfont;
-	flex: 1;
-	overflow: auto;
+  position: relative;
+  background-color: $blockcol;
+  padding: 47px $bfont $bfont $bfont;
+  flex: 1;
+  overflow: auto;
 }
 .postf-ul {
-	position: absolute;
-	display: flex;
-	flex-wrap: wrap;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: #d2d2d2;
-	border-bottom: 1px solid #a5a5a5;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d2d2d2;
+  border-bottom: 1px solid #a5a5a5;
 }
 .postf-content {
-	height: 100%;
-	overflow: auto;
+  height: 100%;
+  overflow: auto;
 }
 .input {
-	width: 100%;
-	font-size: 1.618em;
-	font-family: $admin-txt;
-	padding-left: $bfont / 2;
-	padding-right: $bfont / 2;
-	background-color: $blockcol;
-	border: none;
+  width: 100%;
+  font-size: 1.618em;
+  font-family: $admin-txt;
+  padding-left: $bfont / 2;
+  padding-right: $bfont / 2;
+  background-color: $blockcol;
+  border: none;
 }
 .pside {
-	width: 30%;
-	padding-left: $bfont;
-	display: flex;
-	flex-direction: column;
+  width: 30%;
+  padding-left: $bfont;
+  display: flex;
+  flex-direction: column;
 }
 
 /*PUBLISH UNPUBLISH BUTTON*/
 .publ {
-	border-radius: 4px;
-	overflow: hidden;
-	width: 100%;
-	border: 1px solid #2b323a;
-	margin-bottom: $bfont;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid #2b323a;
+  margin-bottom: $bfont;
 }
 .publ-btn {
-	display: inline-block;
-	vertical-align: middle;
-	width: 50%;
-	margin: 0;
-	border-style: none;
-	color: white;
-	padding: $bfont/2;
-	transition: background-color .2s;
-	cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  margin: 0;
+  border-style: none;
+  color: white;
+  padding: $bfont/2;
+  transition: background-color .2s;
+  cursor: pointer;
 }
 .publ-btn_published {
-	background-color: $bgcol;
-	box-shadow: inset 0px 2px 10px 1px rgba(0, 0, 0, 0.3);
-	&.active,
-	&:hover {
-		background-color: #a04747;
-		box-shadow: none;
-	}
-	&.active {cursor: default;}
+  background-color: $bgcol;
+  box-shadow: inset 0px 2px 10px 1px rgba(0, 0, 0, 0.3);
+  &.active,
+  &:hover {
+    background-color: #a04747;
+    box-shadow: none;
+  }
+  &.active {cursor: default;}
 }
 .publ-btn_unpublished {
-	background-color: $bgcol;
-	box-shadow: inset 0px 2px 10px 1px rgba(0, 0, 0, 0.3);
-	&.active,
-	&:hover {
-		background-color: #2d537d;
-		box-shadow: none;
-	}
-	&.active {cursor: default;}
+  background-color: $bgcol;
+  box-shadow: inset 0px 2px 10px 1px rgba(0, 0, 0, 0.3);
+  &.active,
+  &:hover {
+    background-color: #2d537d;
+    box-shadow: none;
+  }
+  &.active {cursor: default;}
 }
 
 /*POST BLOCK*/
 .post-block {
-	padding: $bfont;
-	border: 1px dashed $bgcol;
-	border-radius: 4px;
-	margin-bottom: $bfont;
-	> p {
-		margin-bottom: $bfont;
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	&:focus {
-		border-color: $accent;
-	}
+  padding: $bfont;
+  border: 1px dashed $bgcol;
+  border-radius: 4px;
+  margin-bottom: $bfont;
+  > p {
+    margin-bottom: $bfont;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &:focus {
+    border-color: $accent;
+  }
 }
 .post-block-image {
-	max-width: 30%;
+  max-width: 30%;
 }
 
 /*DATE FORM*/
 .datef {
-	display: flex;
+  display: flex;
 }
 .datef-item {
-	display: inline-block;
-	max-width: 100%;
+  display: inline-block;
+  max-width: 100%;
 }
 
 /*CATEGORY*/
 .category-title {
-	font-size: 1.618em;
-	margin-bottom: $bfont/2;
+  font-size: 1.618em;
+  margin-bottom: $bfont/2;
 }
 
 /*LOGIN BOX*/
 .login {
-	display: block;
+  display: block;
 }
 .login-image {
-	max-width: 200px;
+  max-width: 200px;
+}
+
+/*FLASH MESSAGES*/
+.flash-notice {
+  background-color: #3b563b;
+  color: #d3dad3;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 2px solid #5e845e;
+  margin-bottom: 14px;
+}
+
+/*ERROR MESSAGES */
+.error-message {
+  background-color: #921e1e;
+  color: #e8e8e8;
+  padding: 7px 14px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 2px solid #c75151;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

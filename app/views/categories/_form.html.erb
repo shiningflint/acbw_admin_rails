@@ -25,7 +25,7 @@
     <% if category.errors.any? %>
     <ul>
       <% category.errors.full_messages.each do |msg| %>
-      <li class="txt-noblock"><%= msg %></li>
+      <li class="error-message"><%= msg %></li>
       <% end %>
     </ul>
     <% end %>
