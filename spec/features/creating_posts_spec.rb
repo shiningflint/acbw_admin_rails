@@ -47,7 +47,7 @@ RSpec.feature "Adam can create new post" do
 
   scenario "not with invalid attributes", js: true do
     click_button "Create Post!"
-    expect(page).to have_content "Category must exist"
+    expect(page).to have_content "Category can't be blank"
     expect(page).to have_content "Title can't be blank"
   end
 end
