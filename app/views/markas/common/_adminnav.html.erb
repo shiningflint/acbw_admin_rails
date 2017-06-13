@@ -1,0 +1,30 @@
+<ul class="sidenav-ul">
+  <li class="sidenav-item">
+    <%= link_to image_tag("acbw_allpath.svg"), session_path, method: :delete, class: "sidenav-icon sidenav-icon_logo", id: "nav-logout" %>
+  </li>
+  <li class="sidenav-item">
+    <% if current_page?(markas_posts_path) %>
+    <%= link_to image_tag("post-it_white.svg"), markas_posts_path, class: "sidenav-icon sidenav-icon_active", id: "nav-posts" %>
+    <% else %>
+    <%= link_to image_tag("post-it.svg"), markas_posts_path, class: "sidenav-icon", id: "nav-posts" %>
+    <% end %>
+  </li>
+  <li class="sidenav-item">
+    <% if current_page?(new_markas_post_path) %>
+    <%= link_to image_tag("add_white.svg"), new_markas_post_path, class: "sidenav-icon sidenav-icon_active", id: "nav-new-post" %>
+    <% else %>
+    <%= link_to image_tag("add.svg"), new_markas_post_path, class: "sidenav-icon", id: "nav-new-post" %>
+    <% end %>
+  </li>
+  <li class="sidenav-item">
+    <% if current_page?(markas_categories_path) %>
+    <%= link_to image_tag("cat_white.svg"), markas_categories_path, class: "sidenav-icon sidenav-icon_active", id: "nav-categories" %>
+    <% else %>
+    <%= link_to image_tag("cat.svg"), markas_categories_path, class: "sidenav-icon", id: "nav-categories" %>
+    <% end %>
+  </li>
+  <li class="sidenav-item">
+    <%# link_to image_tag("settings_white.svg"), setting_path(1), class: "sidenav-icon sidenav-icon_active" %>
+    <%= link_to image_tag("settings.svg"), setting_path(1), class: "sidenav-icon" %>
+  </li>
+</ul>

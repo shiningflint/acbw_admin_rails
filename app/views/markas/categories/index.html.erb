@@ -1,7 +1,7 @@
 <!--▼▼Content▼▼-->
 <div class="content-wrap">
   <div class="sidenav-wrap">
-    <%= render partial: "common/adminnav" %>
+    <%= render partial: "markas/common/adminnav" %>
   </div>
 
   <div class="main-wrap">
@@ -10,7 +10,7 @@
       <% flash.each do |key, message| %>
         <div class="flash-notice"><%= message %></div>
       <% end %>
-      <p><%= link_to "New Category", new_category_path, class: "btn" %></p>
+      <p><%= link_to "New Category", new_markas_category_path, class: "btn" %></p>
     </div>
 
     <div class="tablewrap">
@@ -24,8 +24,8 @@
         <tbody class="table-body">
           <% @categories.each do |category| %>
           <tr>
-            <td><%= link_to category.category_name, edit_category_path(category.id) %></td>
-            <td><%= link_to "Edit", edit_category_path(category.id), class: "btn" %></td>
+            <td><%= link_to category.category_name, edit_markas_category_path(category.id) %></td>
+            <td><%= link_to "Edit", edit_markas_category_path(category.id), class: "btn" %></td>
           </tr>
           <% end %>
         </tbody>
