@@ -1,6 +1,6 @@
 <ul class="sidenav-ul">
   <li class="sidenav-item">
-    <%= link_to image_tag("acbw_allpath.svg"), posts_path, class: "sidenav-icon sidenav-icon_logo" %>
+    <%= link_to image_tag("acbw_allpath.svg"), session_path, method: :delete, class: "sidenav-icon sidenav-icon_logo", id: "nav-logout" %>
   </li>
   <li class="sidenav-item">
     <% if current_page?(posts_path) %>
