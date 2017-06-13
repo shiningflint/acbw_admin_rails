@@ -1,4 +1,5 @@
 class Markas::ApplicationController < ApplicationController
+  layout "markas"
   protect_from_forgery with: :exception
   before_action :authorize_admin!
 
