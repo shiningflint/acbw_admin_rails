@@ -1,0 +1,2 @@
+module Markas::CategoriesHelper
+end

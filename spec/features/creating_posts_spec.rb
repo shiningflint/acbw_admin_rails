@@ -1,4 +1,5 @@
 require 'rails_helper'
+require "rack_session_access/capybara"
 
 RSpec.configure do |config|
   #database cleaner gem setup
@@ -18,10 +19,12 @@ RSpec.configure do |config|
 end
 
 RSpec.feature "Adam can create new post" do
+  let!(:adam) { FactoryGirl.create :user }
   let!(:category) { FactoryGirl.create(:category, category_name: "Photo Walk") }
 
   before do
-    visit new_post_path
+    page.set_rack_session(user_id: adam.id)
+    visit new_markas_post_path
     expect(page).to have_content "Photo Walk"
   end
 

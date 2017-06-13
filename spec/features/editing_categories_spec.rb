@@ -1,10 +1,13 @@
 require 'rails_helper'
+require "rack_session_access/capybara"
 
 RSpec.feature "Adam can edit existing category" do
+  let!(:adam) { FactoryGirl.create :user }
   let!(:category) { FactoryGirl.create :category, category_name: "Life in Tokyo" }
 
   before do
-    visit categories_path
+    page.set_rack_session(user_id: adam.id)
+    visit markas_categories_path
   end
 
   scenario "with valid attributes" do

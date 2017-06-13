@@ -1,4 +1,5 @@
 require 'rails_helper'
+require "rack_session_access/capybara"
 
 RSpec.configure do |config|
   #database cleaner gem setup
@@ -18,12 +19,14 @@ RSpec.configure do |config|
 end
 
 RSpec.feature "Adam can edit existing post" do
+  let!(:adam) { FactoryGirl.create :user }
   let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
   let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
   let!(:post) { FactoryGirl.create :post, category: category }
 
   before do
-    visit posts_path
+    page.set_rack_session(user_id: adam.id)
+    visit markas_posts_path
     click_link "A test post"
     expect(page).to have_selector("#edit-post")
   end

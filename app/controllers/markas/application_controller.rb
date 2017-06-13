@@ -3,7 +3,7 @@ class Markas::ApplicationController < ApplicationController
   before_action :authorize_admin!
 
   def index
-    redirect_to posts_path
+    redirect_to markas_posts_path
   end
 
   private

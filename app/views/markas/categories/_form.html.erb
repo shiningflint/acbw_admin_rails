@@ -1,4 +1,4 @@
-<%= form_for category, html: {class: "post-form"} do |f| %>
+<%= form_for [:markas, category], html: {class: "post-form"} do |f| %>
   <div class="main-wrap main-wrap_cat">
     <div class="block block_nocolor block_nopadding">
       <h1 class="title">
@@ -12,10 +12,10 @@
     <div class="block block_nocolpad">
       <%= f.submit class: "btn btn_add btn_catadd" %>
       <% if category.new_record?%>
-        <%= link_to("Back", categories_path, class: "btn") %>
+        <%= link_to("Back", markas_categories_path, class: "btn") %>
       <% else %>
         <%= link_to("Delete Category",
-          category_path(@category),
+          markas_category_path(category),
           method: :delete,
           data: {confirm: 'Delete this category?'},
           class: "btn")

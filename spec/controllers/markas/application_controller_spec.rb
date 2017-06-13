@@ -18,7 +18,7 @@ RSpec.describe Markas::ApplicationController, type: :controller do
     it "are able to access the index action" do
       login(adam)
       get :index
-      expect(response).to redirect_to posts_path
+      expect(response).to redirect_to markas_posts_path
     end
   end
 end
