@@ -1,4 +1,6 @@
-class SessionsController < ApplicationController
+class Markas::SessionsController < Markas::ApplicationController
+  skip_before_action :authorize_admin!
+  
   def new
   end
 
@@ -16,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to new_session_path
+    redirect_to markas_login_path
   end
 end

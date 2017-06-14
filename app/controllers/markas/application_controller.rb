@@ -1,4 +1,5 @@
 class Markas::ApplicationController < ApplicationController
+  layout "markas"
   protect_from_forgery with: :exception
   before_action :authorize_admin!
 
@@ -12,6 +13,6 @@ class Markas::ApplicationController < ApplicationController
     end
 
     def authorize_admin!
-      redirect_to new_session_path unless current_user
+      redirect_to markas_login_path unless current_user
     end
 end

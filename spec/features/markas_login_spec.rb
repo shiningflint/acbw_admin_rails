@@ -14,6 +14,6 @@ RSpec.feature "Adam can login into markas page" do
     fill_in "user-input", with: "adam"
     fill_in "password-input", with: "12345adam"
     click_button "Enter"
-    expect(page.current_url).to eq new_session_url
+    expect(page.current_url).to eq markas_login_url
   end
 end

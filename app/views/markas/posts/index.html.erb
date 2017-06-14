@@ -25,7 +25,10 @@
           <tr>
             <td><%= link_to post.title, edit_markas_post_path(post.id) %></td>
             <% if post.category_id.present? %>
-              <td><%= link_to post.category.category_name, categories_posts_path(post.category_id) %></td>
+              <td>
+                <%# link_to post.category.category_name, categories_posts_path(post.category_id) %>
+                <%= post.category.category_name %>
+              </td>
             <% else %>
               <td>No category</td>
             <% end %>

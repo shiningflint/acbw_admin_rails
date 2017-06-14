@@ -8,6 +8,6 @@ RSpec.feature "Adam can logout from markas page" do
     page.set_rack_session(user_id: adam.id)
     visit markas_posts_path
     click_link "nav-logout"
-    expect(page.current_url).to eq new_session_url
+    expect(page.current_url).to eq markas_login_url
   end
 end

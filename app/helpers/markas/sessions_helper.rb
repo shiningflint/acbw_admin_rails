@@ -1,0 +1,2 @@
+module Markas::SessionsHelper
+end
