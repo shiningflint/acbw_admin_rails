@@ -10,47 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612080648) do
+ActiveRecord::Schema.define(version: 20170615085410) do
 
   create_table "admins", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "category_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.string   "status"
-    t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "slug"
-    t.integer  "category_id"
-    t.string   "main_image"
-    t.string   "thumb_image"
+    t.string "title"
+    t.text "content"
+    t.string "status"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.integer "category_id"
+    t.string "main_image"
+    t.string "thumb_image"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
   create_table "settings", force: :cascade do |t|
-    t.string   "setting_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.text     "setting_value"
+    t.string "setting_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "setting_value"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -14,6 +14,7 @@ class Markas::CategoriesController < Markas::ApplicationController
 
   def create
     @category = Category.new(cat_params)
+    @category.slug = params[:category][:category_name].downcase.parameterize
 
     if @category.save
       flash[:notice] = "Category created successfully."
@@ -24,6 +25,7 @@ class Markas::CategoriesController < Markas::ApplicationController
   end
 
   def update
+    @category.slug = params[:category][:category_name].downcase.parameterize
     if @category.update(cat_params)
       flash[:notice] = "Category updated successfully."
       redirect_to markas_categories_path

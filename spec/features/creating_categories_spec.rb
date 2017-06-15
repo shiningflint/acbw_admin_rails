@@ -3,7 +3,7 @@ require "rack_session_access/capybara"
 
 RSpec.feature "Adam can add a new category" do
   let!(:adam) { FactoryGirl.create :user }
-  let(:category) { FactoryGirl.create :category }
+  
   before do
     page.set_rack_session(user_id: adam.id)
     visit markas_categories_path
