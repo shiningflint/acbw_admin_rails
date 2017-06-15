@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     get '/login', to: "sessions#new"
     post '/login', to: "sessions#create"
     delete '/logout', to: "sessions#destroy"
-    resources :posts, :categories
+    resources :posts, except: :show
+    resources :categories, except: :show
+  end
+
+  namespace :blog do
+    resources :posts, only: :show, path: ''
+    resources :categories, only: :show
   end
 end
