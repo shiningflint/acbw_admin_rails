@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ACBW Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'blog/application' %>
+    <%= javascript_include_tag 'blog/application' %>
+  </head>
+
+  <body class="body">
+    <%= yield %>
+    <script>
+      //load the navigation if window width under 700px
+      if(window.innerWidth < 700) {spnavInit('ham-btn', 'ham-line', 'nav-menu', 'sp-header');}
+      if(window.innerWidth >= 700) {catInit('nav-cat');}
+      scrollTopInit('btn-top');
+      lazyLoad('.lazyload', 'https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_temp.png');
+    </script>
+  </body>
+</html>
