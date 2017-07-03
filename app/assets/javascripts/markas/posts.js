@@ -192,10 +192,23 @@ function removeEdit(blockString) {
   return;
 }
 
+function mainImgInit(mainID, showID) {
+  var main = document.getElementById(mainID);
+  var show = document.getElementById(showID);
+  main.addEventListener("click", function(e) {
+    var newImg = document.createElement("img");
+    var imgSrc = prompt("Put img URL below");
+    newImg.src = imgSrc;
+    show.innerHTML = "";
+    show.appendChild(newImg);
+  }, false)
+}
+
 //call function if element exists
 document.addEventListener("DOMContentLoaded", function(e) {
   if(document.getElementById("postf-content") != null) {
     postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "edit-block", "create-post", "post-form", "post_date", "postyear", "postmonth", "postday");
     publishInit("published", "unpublished", "publishwrap", "post_status");
+    mainImgInit("main-pic", "main-pic-show");
   }
 });
