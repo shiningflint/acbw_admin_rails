@@ -32,7 +32,9 @@
 <!--▼▼Post Header▼▼-->
 <div class="post-header">
   <div class="post-image">
-    <%= image_tag "https://s3-ap-southeast-1.amazonaws.com/wpacbw/uploads/2016/12/s_IMG_20160903_143926-1.jpg", alt: "Header Image", class: "post-image__img lazyload" %>
+    <% if @post.main_image %>
+    <%= image_tag @post.main_image, alt: @post.title, class: "post-image__img lazyload", id: "post-main-img" %>
+    <% end %>
   </div>
 </div>
 <!--▲▲Post Header▲▲-->
