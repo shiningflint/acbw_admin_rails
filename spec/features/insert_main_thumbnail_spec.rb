@@ -19,7 +19,7 @@ RSpec.configure do |config|
 end
 
 RSpec.feature "Adam inserts a main image" do
-  imageURL = "https://s3-ap-southeast-1.amazonaws.com/wpacbw/uploads/2016/12/s_IMG_20161106_140903.jpg"
+  image_url = "https://s3-ap-southeast-1.amazonaws.com/wpacbw/uploads/2016/12/s_IMG_20161106_140903.jpg"
   let!(:adam) { FactoryGirl.create :user }
   let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
   let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
@@ -38,7 +38,7 @@ RSpec.feature "Adam inserts a main image" do
 
     click_button "main-pic"
     prompt = page.driver.browser.switch_to.alert
-    prompt.send_keys imageURL
+    prompt.send_keys image_url
     prompt.accept
 
     expect(page).to have_css("#main-pic-show > img[src*='s_IMG_20161106_140903.jpg']")

@@ -124,8 +124,20 @@
       <hr class="block-separator">
       <div class="block block_nocolpad">
         <p class="category-title">Main Pic</p>
-        <p class="mb1" id="main-pic-show">No pic</p>
-        <button type="button" id="main-pic" class="btn">Add a Catchy One!</button>
+        <p class="mb1" id="main-pic-show">
+          <% if post.main_image %>
+            <%= image_tag post.main_image %>
+          <% else %>
+            No Pic
+          <% end %>
+        </p>
+        <button type="button" id="main-pic" class="btn">
+          <% if post.main_image %>
+            Change image
+          <% else %>
+            Add a Catchy One!
+          <% end %>
+        </button>
         <%= f.hidden_field :main_image, value: "" %>
       </div>
       <hr class="block-separator">
