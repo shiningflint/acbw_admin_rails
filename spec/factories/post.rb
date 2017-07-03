@@ -5,5 +5,6 @@ FactoryGirl.define do
     status "unpublished"
     date "2017-06-07"
     slug "a-test-post"
+    main_image "https://s3-ap-southeast-1.amazonaws.com/wpacbw/uploads/2016/12/s_IMG_20161106_140903.jpg"
   end
 end
