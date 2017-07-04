@@ -31,6 +31,8 @@ RSpec.feature "Adam inserts a main image" do
     fill_in "post_title", with: "Wadabori Park"
     click_button "new-block"
 
+    click_button "published"
+
     fill_in "postyear", with: "2016"
     select "November", from: "postmonth"
     select "6", from: "postday"
