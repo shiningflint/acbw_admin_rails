@@ -20,15 +20,16 @@
     <div class="block block_nopadding input-title">
       <%= f.text_field :title, placeholder: "Post Title", class: "input", autofocus: true %>
     </div>
-    <div class="block block_nocolpad">
-      <% if post.errors.any? %>
-      <ul>
-        <% post.errors.full_messages.each do |msg| %>
-        <li class="error-message"><%= msg %></li>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
+
+    <% if post.errors.any? %>
+      <div class="block block_nocolpad">
+        <ul>
+          <% post.errors.full_messages.each do |msg| %>
+          <li class="error-message"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="postf">
       <ul class="postf-ul">
         <li class="postf-item"><button type="button" id="new-block" class="btn">New Block</button></li>
