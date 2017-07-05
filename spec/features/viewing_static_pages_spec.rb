@@ -9,5 +9,6 @@ RSpec.feature "Anyone can view static pages" do
   scenario "any strange link to return 404" do
     visit "/kentang"
     expect(page.status_code).to eq(404)
+    expect(page).to have_content "Looks like this page has rolled away"
   end
 end

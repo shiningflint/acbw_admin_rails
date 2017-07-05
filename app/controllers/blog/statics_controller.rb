@@ -4,6 +4,6 @@ class Blog::StaticsController < Blog::ApplicationController
   end
 
   rescue_from ActionView::MissingTemplate do |exception|
-    render plain: "404 Not Found", status: 404
+    render "four-o-four", status: 404
   end
 end
