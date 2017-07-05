@@ -25,15 +25,27 @@ p {
   line-height: 26px;
 }
 .body { background-color: $bg-color;}
+.center { text-align: center;}
+.mt2 { margin-top: 28px;}
+.mb2 { margin-bottom: 28px;}
+.link-button {
+  display: inline-block;
+  background-color: $title-color;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 // LAZYLOAD CSS
 .lazyload.active {
-	animation-name: fadeIn;
-	animation-duration: 0.3s;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
 }
 @keyframes fadeIn {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 /****************/
@@ -155,9 +167,6 @@ p {
 .btn-top__img {opacity: 0.6;}
 /***To Top Button END***/
 
-// UTILITIES
-.center { text-align: center;}
-
 // POST TITLE
 .post-title {
   font-family: $bree-serif;
@@ -172,6 +181,13 @@ p {
     height: 1px;
     background-color: $title-color;
     width: 100px;
+  }
+}
+.post-title--fourofour {
+  text-align: center;
+  &::after {
+    content: none;
+    display: none;
   }
 }
 .post-wrap__inner {
@@ -201,4 +217,10 @@ p {
 }
 .footer__text {
   color: #a87271;
+}
+
+// 404
+.rolled-away {
+  color: #b5b1ad;
+  text-align: center;
 }
