@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get '/:id', to: 'blog/statics#show', as: 'static'
+
   scope '/markas' do
     # get '/categories/:category_id/posts', to: "posts#catsort", as: "categories_posts"
     get '/settings/:id', to: "settings#edit", as: "setting"

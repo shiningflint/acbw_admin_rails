@@ -22,17 +22,30 @@ p {
   font-family: $open-sans;
   font-size: 16px;
   color:#545454;
+  line-height: 26px;
 }
 .body { background-color: $bg-color;}
+.center { text-align: center;}
+.mt2 { margin-top: 28px;}
+.mb2 { margin-bottom: 28px;}
+.link-button {
+  display: inline-block;
+  background-color: $title-color;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 // LAZYLOAD CSS
 .lazyload.active {
-	animation-name: fadeIn;
-	animation-duration: 0.3s;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
 }
 @keyframes fadeIn {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 /****************/
@@ -170,6 +183,13 @@ p {
     width: 100px;
   }
 }
+.post-title--fourofour {
+  text-align: center;
+  &::after {
+    content: none;
+    display: none;
+  }
+}
 .post-wrap__inner {
   background-color: white;
   padding: 0 0 1px 0;
@@ -197,4 +217,10 @@ p {
 }
 .footer__text {
   color: #a87271;
+}
+
+// 404
+.rolled-away {
+  color: #b5b1ad;
+  text-align: center;
 }

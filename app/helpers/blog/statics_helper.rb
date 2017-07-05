@@ -1,0 +1,2 @@
+module Blog::StaticsHelper
+end
