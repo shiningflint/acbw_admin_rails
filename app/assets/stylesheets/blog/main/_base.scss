@@ -46,6 +46,10 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
 
 // LAZYLOAD CSS
 .lazyload.active {
@@ -243,6 +247,27 @@ a {
   font-size: 0.707em;
   line-height: 22px;
   color: $link-color;
+}
+.post-item__read {
+  position: relative;
+  background-color: #f5afae;
+  color: white;
+  font-size: 0.707em;
+  line-height: 18px;
+  padding: 0 8px;
+  border-radius: 4px 0 0 4px;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -9px;
+    height: 0;
+    width: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 9px solid #f5afae;
+  }
 }
 
 // POST DOODLE
