@@ -144,8 +144,21 @@
       <hr class="block-separator">
       <div class="block block_nocolpad">
         <p class="category-title">Little Pic</p>
-        <p class="mb1">No little pic</p>
-        <button type="button" id="thumb-pic" class="btn">Put a Little Pic!</button>
+        <p class="mb1" id="little-pic-show">
+          <% if post.thumb_image %>
+            <%= image_tag post.thumb_image %>
+          <% else %>
+            No little pic
+          <% end %>
+        </p>
+        <button type="button" id="little-pic" class="btn">
+          <% if post.thumb_image %>
+            Change little pic
+          <% else %>
+            Put a Little Pic!
+          <% end %>
+        </button>
+        <%= f.hidden_field :thumb_image, value: post.thumb_image %>
       </div>
     </div>
   </div>
