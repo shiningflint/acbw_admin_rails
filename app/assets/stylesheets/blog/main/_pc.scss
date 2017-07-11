@@ -97,8 +97,35 @@
     margin: 0 auto 26px auto;
     padding: 0;
   }
+  .post-title--category {
+    max-width: 960px;
+    padding: 0 16px;
+  }
   .post-content p {
     max-width: 685px;
     padding: 0;
+  }
+  .category-smtxt {
+    padding: 0 16px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  // CARD LAYOUT
+  .list-wrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 14px;
+    margin: 0 auto;
+  }
+  .list-item {
+    width: 48%;
+    padding: 0;
+    margin-bottom: 4%;
+    margin-right: 4%;
+    &:nth-child(even) {
+      margin-right: 0;
+    }
   }
 }
