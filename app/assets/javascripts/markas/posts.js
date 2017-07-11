@@ -212,5 +212,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
     postInit(".post-block", "postf-content", "post_content", "new-block", "new-img", "del-block", "edit-block", "create-post", "post-form", "post_date", "postyear", "postmonth", "postday");
     publishInit("published", "unpublished", "publishwrap", "post_status");
     mainImgInit("main-pic", "main-pic-show", "post_main_image");
+    mainImgInit("little-pic", "little-pic-show", "post_thumb_image");
   }
 });

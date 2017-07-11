@@ -54,6 +54,6 @@ class Markas::PostsController < Markas::ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :content, :status, :date, :slug, :category_id, :main_image)
+      params.require(:post).permit(:title, :content, :status, :date, :slug, :category_id, :main_image, :thumb_image)
     end
 end

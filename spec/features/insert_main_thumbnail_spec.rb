@@ -43,6 +43,12 @@ RSpec.feature "Adam inserts a main image" do
     prompt.send_keys image_url
     prompt.accept
 
+    click_button "little-pic"
+    prompt = page.driver.browser.switch_to.alert
+    prompt.send_keys image_url
+    prompt.accept
+
+    expect(page.find("#post_thumb_image", visible: false).value).to eq image_url
     expect(page).to have_css("#main-pic-show > img[src*='s_IMG_20161106_140903.jpg']")
     click_button "Create Post!"
     sleep 1
