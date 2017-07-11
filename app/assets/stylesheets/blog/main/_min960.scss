@@ -1,0 +1,17 @@
+@media screen and (min-width: 960px) {
+  // CARD LAYOUT
+  .list-wrap {
+    max-width: 960px;
+  }
+  .list-item {
+    width: 32%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    &:nth-child(even) {
+      margin-right: 2%;
+    }
+    &:nth-child(3n+0) {
+      margin-right: 0;
+    }
+  }
+}
