@@ -254,17 +254,22 @@ a {
 }
 .post-item__date {
   font-size: 0.707em;
-  line-height: 22px;
+  line-height: 20px;
   color: $link-color;
+}
+.post-item__readwrap {
+  margin-right: 9px;
+  line-height: 20px;
 }
 .post-item__read {
   position: relative;
-  background-color: #f5afae;
+  background-color: #c84d4b;
   color: white;
   font-size: 0.707em;
   line-height: 18px;
   padding: 0 8px;
   border-radius: 4px 0 0 4px;
+  vertical-align: top;
   &::after {
     content: "";
     display: block;
@@ -275,7 +280,7 @@ a {
     width: 0;
     border-top: 9px solid transparent;
     border-bottom: 9px solid transparent;
-    border-left: 9px solid #f5afae;
+    border-left: 9px solid #c84d4b;
   }
 }
 
