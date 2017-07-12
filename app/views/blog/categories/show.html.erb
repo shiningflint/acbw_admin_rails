@@ -8,9 +8,17 @@
   <li class="list-item">
     <div class="post-item">
       <p class="post-item__imgwrap">
-        <%=
-          link_to image_tag(post.main_image, alt: post.title, class: "post-item__img"), blog_post_path(post.slug)
-        %>
+        <% if post.thumb_image %>
+          <%=
+            link_to image_tag(post.thumb_image, alt: post.title, class: "post-item__img"),
+            blog_post_path(post.slug)
+          %>
+        <% else %>
+          <%=
+          link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_temp.png", alt: post.title, class: "post-item__img"),
+          blog_post_path(post.slug)
+          %>
+        <% end %>
       </p>
       <div class="post-item__txtwrap">
         <p>
