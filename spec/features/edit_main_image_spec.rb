@@ -36,7 +36,6 @@ RSpec.feature "Adam can edit the main image" do
 
     expect(page).to have_css("#main-pic-show > img[src*='s_IMG_20161106_140639.jpg']")
     click_button "Update Post!"
-    sleep 1
     visit "/blog/a-test-post"
     expect(page).to have_css("#post-main-img[src*='s_IMG_20161106_140639.jpg']")
   end

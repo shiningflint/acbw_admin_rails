@@ -51,7 +51,7 @@ RSpec.feature "Adam inserts a main image" do
     expect(page.find("#post_thumb_image", visible: false).value).to eq image_url
     expect(page).to have_css("#main-pic-show > img[src*='s_IMG_20161106_140903.jpg']")
     click_button "Create Post!"
-    sleep 1
+
     visit "/blog/wadabori-park"
     expect(page).to have_css("#post-main-img[src*='s_IMG_20161106_140903.jpg']")
   end

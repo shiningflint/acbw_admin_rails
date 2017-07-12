@@ -40,7 +40,6 @@ RSpec.feature "Adam can edit existing post" do
     choose "Tokyo Cycling Diary"
     click_button "Update Post!"
 
-    sleep 1
     expect(page).to have_content "Post has been updated successfully."
     expect(page).to have_content "Wadabori Park"
     expect(page).to_not have_content "A test post"

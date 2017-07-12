@@ -38,7 +38,6 @@ RSpec.feature "Adam can create new post" do
     choose "Photo Walk"
 
     click_button "Create Post!"
-    sleep 1
     expect(page).to have_content "Post has been created successfully."
     expect(page).to have_content "Crossing the Rainbow Bridge to Odaiba"
     expect(page).to have_content "Photo Walk"
