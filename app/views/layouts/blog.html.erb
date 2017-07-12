@@ -25,9 +25,7 @@
           <div id="nav-cat" class="nav-menu__category">
             <p class="nav-menu__title">Categories</p>
             <ul class="nav-ul">
-              <li class="nav-ul__item"><a href="#" class="nav-ul__link">Tokyo Cycling Diary</a></li>
-              <li class="nav-ul__item"><a href="#" class="nav-ul__link">Photo Walk</a></li>
-              <li class="nav-ul__item"><a href="#" class="nav-ul__link">Life Update</a></li>
+              <li class="nav-ul__item"><%= link_to "Tokyo Cycling Diary", blog_category_path('tokyo-cycling-diary'), class: 'nav-ul__link' %></li>
             </ul>
           </div>
         </nav>
@@ -67,7 +65,6 @@
       if(window.innerWidth < 700) {spnavInit('ham-btn', 'ham-line', 'nav-menu', 'sp-header');}
       if(window.innerWidth >= 700) {catInit('nav-cat');}
       scrollTopInit('btn-top');
-      lazyLoad('.lazyload', 'https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_temp.png');
     </script>
   </body>
 </html>
