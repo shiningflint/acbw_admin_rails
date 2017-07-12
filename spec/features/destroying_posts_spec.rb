@@ -31,7 +31,6 @@ RSpec.feature "Adam can delete existing post" do
     expect(page).to have_selector("#edit-post")
     click_link "Delete Post"
     page.driver.browser.switch_to.alert.accept
-    sleep 1
     expect(page).to have_content "Post has been deleted successfully."
     expect(page).to_not have_content "A test post"
   end
