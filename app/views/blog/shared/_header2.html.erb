@@ -1,0 +1,30 @@
+<!--▼▼Header▼▼-->
+<header id="sp-header" class="sp-header sp-header--home"
+  style="background-image: url('http://acbw.me/acbwp/wp-content/themes/acbw/img/acbwbg.jpg');"
+>
+  <div class="header-inner header-inner--home">
+    <!--▼▼Logo▼▼-->
+    <div class="logo logo--home">
+      <a href="#" class="logo__link"><%= image_tag "https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_mobile.svg", alt: "Logo", class: "logo__image logo__image--home" %></a>
+    </div>
+    <!--▲▲Logo▲▲-->
+    <!--▼▼Navigation Menu▼▼-->
+    <nav id="nav-menu" class="nav-menu">
+      <%= link_to "About", "/about", class: "nav-menu__title nav-menu__title--first" %>
+      <div id="nav-cat" class="nav-menu__category">
+        <p class="nav-menu__title">Categories</p>
+        <ul class="nav-ul">
+          <li class="nav-ul__item"><%= link_to "Tokyo Cycling Diary", blog_category_path('tokyo-cycling-diary'), class: 'nav-ul__link' %></li>
+        </ul>
+      </div>
+    </nav>
+    <!--▲▲Navigation Menu▲▲-->
+  </div>
+
+  <!--▼▼Hamburger Button▼▼-->
+  <div id="ham-btn" class="ham-btn">
+    <div id="ham-line" class="ham-line"></div>
+  </div>
+  <!--▲▲Hamburger Button▲▲-->
+</header>
+<!--▲▲Header▲▲-->

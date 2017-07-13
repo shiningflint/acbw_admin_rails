@@ -25,7 +25,7 @@
           <%= link_to post.title, blog_post_path(post.slug), class: "post-item__link" %>
         </p>
         <div class="flex">
-          <p class="post-item__date"><%= post.date %></p>
+          <p class="post-item__date"><%= post.date.strftime("%a, %Y/%m/%d") %></p>
           <p class="post-item__readwrap"><%= link_to "Read post", blog_post_path(post.slug), class: "post-item__read" %></p>
         </div>
       </div>
