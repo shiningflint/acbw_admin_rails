@@ -1,31 +1,32 @@
 <main class="post-wrap">
-  <div class="mt2">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut ligula
-    consectetur, dapibus erat ut, pulvinar augue. Duis aliquam, mi non rhoncus
-    vehicula, orci ex tristique odio, vel tincidunt ante magna et enim.
-    Pellentesque mauris velit, placerat ac dolor et, ornare scelerisque justo.
-    Duis placerat, justo non ullamcorper dignissim, sem nunc dapibus ipsum,
-    ac malesuada erat ligula a nibh. Pellentesque habitant morbi tristique
-    senectus et netus et malesuada fames ac turpis egestas. Donec volutpat felis
-    sit amet placerat vestibulum. Vestibulum bibendum metus nec enim porttitor
-    sollicitudin. Morbi sollicitudin nisl in ultrices hendrerit. Sed bibendum
-    ultrices elit dapibus suscipit.</p>
-
-    <p>Vivamus posuere lobortis placerat. Nulla maximus tortor sit amet sapien semper,
-    ut feugiat magna consectetur. In vel efficitur ipsum. Phasellus nisl est,
-    finibus sed dignissim id, consequat sit amet nisi. Ut interdum ante magna,
-    quis laoreet lectus imperdiet at. In vestibulum ipsum sit amet eros posuere,
-    quis commodo nulla tristique. Integer efficitur dapibus sapien ac elementum.
-    Sed pulvinar mauris sed mi pharetra auctor. Phasellus metus justo, ultrices
-    nec turpis eu, tempor congue risus. Etiam in mauris lacus. Aliquam vel dolor
-    tortor. Cras elementum quam sed augue luctus commodo. Etiam id enim eu erat
-    porttitor molestie sed nec lorem. In magna ante, gravida vitae pulvinar vitae,
-    viverra sed turpis.</p>
-
-    <p>Morbi vehicula viverra viverra. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Nam sit amet sagittis augue, maximus rutrum velit.
-    Quisque congue tellus sed vulputate pharetra. Ut sed lectus mollis,
-    elementum purus id, aliquet tortor. Maecenas vehicula gravida consequat.
-    Proin non odio sapien.</p>
-  </div>
+  <ul class="list-wrap">
+    <% @posts.each do |post| %>
+    <li class="list-item">
+      <div class="post-item">
+        <p class="post-item__imgwrap">
+          <% if post.thumb_image %>
+            <%=
+              link_to image_tag(post.thumb_image, alt: post.title, class: "post-item__img"),
+              blog_post_path(post.slug)
+            %>
+          <% else %>
+            <%=
+              link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_temp.png", alt: post.title, class: "post-item__img"),
+              blog_post_path(post.slug)
+            %>
+          <% end %>
+        </p>
+        <div class="post-item__txtwrap">
+          <p>
+            <%= link_to post.title, blog_post_path(post.slug), class: "post-item__link" %>
+          </p>
+          <div class="flex">
+            <p class="post-item__date"><%= post.date.strftime("%a, %Y/%m/%d") %></p>
+            <p class="post-item__readwrap"><%= link_to "Read post", blog_post_path(post.slug), class: "post-item__read" %></p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 </main>
