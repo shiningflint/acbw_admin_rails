@@ -11,11 +11,7 @@
   </head>
 
   <body class="body">
-    <% if current_page?(home_static_url) %>
-      <%= render "blog/shared/header2" %>
-    <% else %>
-      <%= render "blog/shared/header" %>
-    <% end %>
+    <%= render "blog/shared/header" %>
 
     <%= yield %>
 

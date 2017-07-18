@@ -3,7 +3,9 @@
   <div class="header-inner">
     <!--▼▼Logo▼▼-->
     <div class="logo">
-      <a href="#" class="logo__link"><%= image_tag "https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_mobile.svg", alt: "Logo", class: "logo__image" %></a>
+      <%= link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/acbw/assets/acbw_mobile.svg", alt: "Logo", class: "logo__image"),
+        home_static_path, class: "logo__link"
+       %>
     </div>
     <!--▲▲Logo▲▲-->
     <!--▼▼Navigation Menu▼▼-->
