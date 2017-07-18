@@ -76,35 +76,14 @@ a {
     height: 100%;
     transition: 0.45s height cubic-bezier(0.0, 0.0, 0.2, 1); //decelerate
   }
-  &.active .logo--home {
-    height: 120px;
-  }
-  &.active > .header-inner--home {
-    background-color: rgba(82, 13, 12, 1);
-  }
-}
-.sp-header--home {
-  height: 240px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 .header-inner {display: block;}
-.header-inner--home {
-  height: 100%;
-  background-color: rgba(82, 13, 12, 0.6);
-  transition: 0.3s background-color;
-}
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   height: $header-height;
   width: 100%;
-}
-.logo--home {
-  height: 100%;
-  transition: 0.5s height;
 }
 .logo__link {display: block;}
 .logo__image {width: 100px;}
