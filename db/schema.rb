@@ -12,21 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170615085410) do
 
-  create_table "admins", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "content"
     t.string "status"
@@ -40,18 +33,19 @@ ActiveRecord::Schema.define(version: 20170615085410) do
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
-  create_table "settings", force: :cascade do |t|
+  create_table "settings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "setting_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "setting_value"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "categories"
 end
