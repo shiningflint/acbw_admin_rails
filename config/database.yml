@@ -15,8 +15,8 @@ development:
   reconnect: false
   database: acbw_rails_dev
   pool: 5
-  username: [DB_USERNAME]
-  password: [DB_PASSWORD]
+  username: root
+  password:
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,18 +28,17 @@ test:
   reconnect: false
   database: acbw_rails_test
   pool: 5
-  username: [DB_USERNAME]
-  password: [DB_PASSWORD]
+  username: root
+  password:
   host: localhost
 
-production:
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: [DB_NAME]
+  database: <%= ENV["DB_NAME"] %>
   pool: 5
-  username: [DB_USERNAME]
-  password: [DB_PASSWORD]
-  host: [DB_HOST]
-  port: [DB_PORT]
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: 3306
