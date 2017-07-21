@@ -33,5 +33,13 @@ test:
   host: localhost
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: [DB_NAME]
+  pool: 5
+  username: [DB_USERNAME]
+  password: [DB_PASSWORD]
+  host: [DB_HOST]
+  port: [DB_PORT]
