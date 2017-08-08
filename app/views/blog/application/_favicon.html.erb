@@ -1,0 +1,10 @@
+<% %w(180).each do |size| %>
+  <%= favicon_link_tag "apple-touch-icon-#{size}x#{size}.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+<% end %>
+
+<% %w(16 32).each do |size| %>
+  <%= favicon_link_tag "favicon-#{size}x#{size}.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+<% end %>
+
+<link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+<meta name="theme-color" content="#ffffff">
