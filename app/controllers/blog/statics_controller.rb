@@ -2,7 +2,7 @@ class Blog::StaticsController < Blog::ApplicationController
   def show
     if params[:id] == 'index'
       category = Category.find_by_slug('tokyo-cycling-diary')
-      @posts = Post.where(category_id: category.id, status: 'published')
+      @posts = Post.where(category_id: category.id, status: 'published').order(date: "desc")
     end
 
     render params[:id]
