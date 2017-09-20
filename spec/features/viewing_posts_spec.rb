@@ -14,6 +14,7 @@ RSpec.feature "Anyone can view" do
     visit "/blog/a-test-post"
     expect(page).to have_content "A test post"
     expect(page).to have_content "Insert content here"
+    expect(page.title).to eq "A test post | ACBW Rolling Around Tokyo"
   end
 
   scenario "not unpublished posts" do
