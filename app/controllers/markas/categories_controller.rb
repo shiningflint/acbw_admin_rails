@@ -1,4 +1,5 @@
 class Markas::CategoriesController < Markas::ApplicationController
+  before_action :validate_user, only: [:update, :create, :destroy]
   before_action :set_category, only: [:edit, :update, :destroy]
 
   def index
@@ -50,5 +51,10 @@ class Markas::CategoriesController < Markas::ApplicationController
 
     def set_category
       @category = Category.find(params[:id])
+    end
+
+    def validate_user
+      flash[:notice] = "You are not authorized to manipulate categories!"
+      redirect_to markas_posts_path unless current_user.name == "adam"
     end
 end

@@ -1,4 +1,6 @@
 class Markas::PostsController < Markas::ApplicationController
+  before_action :validate_user, only: [:update, :create, :destroy]
+
   def index
     @posts = Post.all.order(date: :desc)
   end
@@ -55,5 +57,10 @@ class Markas::PostsController < Markas::ApplicationController
   private
     def post_params
       params.require(:post).permit(:title, :content, :status, :date, :slug, :category_id, :main_image, :thumb_image)
+    end
+
+    def validate_user
+      flash[:notice] = "You are not authorized to manipulate posts!"
+      redirect_to markas_posts_path unless current_user.name == "adam"
     end
 end
