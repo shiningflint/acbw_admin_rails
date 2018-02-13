@@ -19,8 +19,8 @@ RSpec.configure do |config|
 end
 
 RSpec.feature "Adam can create new post" do
-  let!(:adam) { FactoryGirl.create :user }
-  let!(:category) { FactoryGirl.create(:category, category_name: "Photo Walk") }
+  let!(:adam) { FactoryBot.create :user }
+  let!(:category) { FactoryBot.create(:category, category_name: "Photo Walk") }
 
   before do
     page.set_rack_session(user_id: adam.id)

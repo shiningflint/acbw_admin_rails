@@ -20,9 +20,9 @@ end
 
 RSpec.feature "Adam inserts a main image" do
   image_url = "https://s3-ap-southeast-1.amazonaws.com/wpacbw/uploads/2016/12/s_IMG_20161106_140903.jpg"
-  let!(:adam) { FactoryGirl.create :user }
-  let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
-  let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
+  let!(:adam) { FactoryBot.create :user }
+  let!(:category) { FactoryBot.create(:category, category_name: "Life in Tokyo") }
+  let!(:new_category) { FactoryBot.create(:category, category_name: "Tokyo Cycling Diary") }
 
   scenario "and it shows on the post show page", js: true do
     page.set_rack_session(user_id: adam.id)

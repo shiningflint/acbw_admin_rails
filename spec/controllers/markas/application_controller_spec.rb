@@ -6,7 +6,7 @@ RSpec.configure do |config|
 end
 
 RSpec.describe Markas::ApplicationController, type: :controller do
-  let!(:adam) { FactoryGirl.create :user }
+  let!(:adam) { FactoryBot.create :user }
   context "non-users" do
     it "are unable to access the index action" do
       get :index

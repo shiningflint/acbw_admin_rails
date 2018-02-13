@@ -19,10 +19,10 @@ RSpec.configure do |config|
 end
 
 RSpec.feature "Adam can delete existing post" do
-  let!(:adam) { FactoryGirl.create :user }
-  let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
-  let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
-  let!(:post) { FactoryGirl.create :post, category: category }
+  let!(:adam) { FactoryBot.create :user }
+  let!(:category) { FactoryBot.create(:category, category_name: "Life in Tokyo") }
+  let!(:new_category) { FactoryBot.create(:category, category_name: "Tokyo Cycling Diary") }
+  let!(:post) { FactoryBot.create :post, category: category }
 
   scenario "successfully", js: true do
     page.set_rack_session(user_id: adam.id)

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Adam can login into markas page" do
-  let!(:admin) { FactoryGirl.create(:user) }
+  let!(:admin) { FactoryBot.create(:user) }
   scenario "with correct credentials" do
     visit "/markas/login"
     fill_in "user-input", with: "adam"

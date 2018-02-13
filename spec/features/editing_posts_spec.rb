@@ -20,10 +20,10 @@ end
 
 RSpec.feature "edit existing post" do
   context "Adam can" do
-    let!(:adam) { FactoryGirl.create :user }
-    let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
-    let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
-    let!(:post) { FactoryGirl.create :post, category: category }
+    let!(:adam) { FactoryBot.create :user }
+    let!(:category) { FactoryBot.create(:category, category_name: "Life in Tokyo") }
+    let!(:new_category) { FactoryBot.create(:category, category_name: "Tokyo Cycling Diary") }
+    let!(:post) { FactoryBot.create :post, category: category }
 
     before do
       page.set_rack_session(user_id: adam.id)
@@ -58,11 +58,11 @@ RSpec.feature "edit existing post" do
   end
 
   context "Guest user cannot" do
-    let!(:adam) { FactoryGirl.create :user, name: "adam" }
-    let!(:guest) { FactoryGirl.create :user, name: "guest" }
-    let!(:category) { FactoryGirl.create(:category, category_name: "Life in Tokyo") }
-    let!(:new_category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
-    let!(:post) { FactoryGirl.create :post, category: category }
+    let!(:adam) { FactoryBot.create :user, name: "adam" }
+    let!(:guest) { FactoryBot.create :user, name: "guest" }
+    let!(:category) { FactoryBot.create(:category, category_name: "Life in Tokyo") }
+    let!(:new_category) { FactoryBot.create(:category, category_name: "Tokyo Cycling Diary") }
+    let!(:post) { FactoryBot.create :post, category: category }
 
     before do
       page.set_rack_session(user_id: guest.id)

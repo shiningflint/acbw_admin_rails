@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1'
 # gem 'sqlite3'
 # Use MySQL as the database for Active Record
 gem 'mysql2'
+# Use postgresql
+gem 'pg', '0.21.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -45,7 +47,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver', '3.4.0'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do

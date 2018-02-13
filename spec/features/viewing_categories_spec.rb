@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Anyone can view posts" do
-  let!(:category) { FactoryGirl.create :category }
-  let!(:post) { FactoryGirl.create :post, category: category }
-  let!(:post2) { FactoryGirl.create :post,
+  let!(:category) { FactoryBot.create :category }
+  let!(:post) { FactoryBot.create :post, category: category }
+  let!(:post2) { FactoryBot.create :post,
     category: category,
     status: "unpublished",
     title: "Unpublished post"

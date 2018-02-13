@@ -20,9 +20,9 @@ end
 
 RSpec.feature "Adam can edit the main image" do
   new_url = "https://s3-ap-southeast-1.amazonaws.com/wpacbw/uploads/2016/12/s_IMG_20161106_140639.jpg"
-  let!(:adam) { FactoryGirl.create :user }
-  let!(:category) { FactoryGirl.create(:category, category_name: "Tokyo Cycling Diary") }
-  let!(:post) { FactoryGirl.create :post, category: category }
+  let!(:adam) { FactoryBot.create :user }
+  let!(:category) { FactoryBot.create(:category, category_name: "Tokyo Cycling Diary") }
+  let!(:post) { FactoryBot.create :post, category: category }
 
   scenario "successfully", js: true do
     page.set_rack_session(user_id: adam.id)

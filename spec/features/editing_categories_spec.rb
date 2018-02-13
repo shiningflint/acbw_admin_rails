@@ -3,8 +3,8 @@ require "rack_session_access/capybara"
 
 RSpec.feature "edit existing category" do
   context "Adam can" do
-    let!(:adam) { FactoryGirl.create :user }
-    let!(:category) { FactoryGirl.create :category, category_name: "Life in Tokyo" }
+    let!(:adam) { FactoryBot.create :user }
+    let!(:category) { FactoryBot.create :category, category_name: "Life in Tokyo" }
 
     before do
       page.set_rack_session(user_id: adam.id)
@@ -41,9 +41,9 @@ RSpec.feature "edit existing category" do
   end
 
   context "others cannot" do
-    let!(:adam) { FactoryGirl.create :user }
-    let!(:guest) { FactoryGirl.create :user, name: "guest" }
-    let!(:category) { FactoryGirl.create :category, category_name: "Life in Tokyo" }
+    let!(:adam) { FactoryBot.create :user }
+    let!(:guest) { FactoryBot.create :user, name: "guest" }
+    let!(:category) { FactoryBot.create :category, category_name: "Life in Tokyo" }
 
     before do
       page.set_rack_session(user_id: guest.id)

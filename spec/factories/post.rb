@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :post do
     title "A test post"
     content "<div class=\"post-block\"><p>Insert content here</p></div><div class=\"post-block\"><p>Block</p></div>"
