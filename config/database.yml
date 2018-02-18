@@ -33,12 +33,12 @@ test:
   host: localhost
 
 production:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   reconnect: false
   database: <%= ENV["DB_NAME"] %>
   pool: 5
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>
   host: <%= ENV["DB_HOST"] %>
-  port: 3306
+  port: 5432
