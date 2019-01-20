@@ -100,7 +100,6 @@ GEM
     nokogiri (1.8.2-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
-    pg (0.21.0-x64-mingw32)
     public_suffix (3.0.3)
     puma (3.11.2)
     rack (2.0.4)
