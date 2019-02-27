@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
+    restart: always
     depends_on:
       - app
     ports:
@@ -12,6 +13,7 @@ services:
       - asset-volume:/etc/nginx/html/
   db:
     image: postgres:10.2-alpine
+    restart: always
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
@@ -24,6 +26,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
+    restart: always
     command: >
       ash -c "bundle exec rake db:migrate
       && bundle exec puma -C config/puma.rb"
