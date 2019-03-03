@@ -4,13 +4,15 @@ services:
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
-    environment:
-      - VIRTUAL_HOST=staging.acbw.me
-    restart: always
     depends_on:
       - app
+    environment:
+      - VIRTUAL_HOST=staging.acbw.me
+    networks:
+      - nginx_proxy_stratas
     ports:
       - "80:80"
+    restart: always
     volumes:
       - asset-volume:/etc/nginx/html/
   db:
@@ -22,6 +24,8 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: ${DB_NAME}
+    networks:
+      - nginx_proxy_stratas
     ports:
       - "5431:5432"
   app:
@@ -38,6 +42,8 @@ services:
       - db
     volumes:
       - asset-volume:/app/public
+    networks:
+      - nginx_proxy_stratas
     env_file:
       - ./.env
     environment:
