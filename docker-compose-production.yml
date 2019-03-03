@@ -9,7 +9,7 @@ services:
     environment:
       - VIRTUAL_HOST=staging.acbw.me
     expose:
-      -80
+      - "80"
     networks:
       - nginx_proxy_stratas
     restart: always
