@@ -8,10 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
-# Use MySQL as the database for Active Record
-gem 'mysql2'
 # Use postgresql
 gem 'pg', '0.21.0'
 
@@ -44,9 +40,8 @@ gem 'bcrypt'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.8'
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver', '3.4.0'
   gem 'factory_bot_rails'
 end
 
