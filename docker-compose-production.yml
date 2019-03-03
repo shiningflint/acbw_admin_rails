@@ -7,7 +7,7 @@ services:
     depends_on:
       - app
     environment:
-      - VIRTUAL_HOST=staging.acbw.me
+      - VIRTUAL_HOST=acbw.me
     expose:
       - "80"
     networks:
