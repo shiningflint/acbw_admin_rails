@@ -8,10 +8,10 @@ services:
       - app
     environment:
       - VIRTUAL_HOST=staging.acbw.me
+    expose:
+      -80
     networks:
       - nginx_proxy_stratas
-    ports:
-      - "80:80"
     restart: always
     volumes:
       - asset-volume:/etc/nginx/html/
