@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
+    environment:
+      - VIRTUAL_HOST=staging.acbw.me
     restart: always
     depends_on:
       - app
@@ -42,3 +44,7 @@ services:
       - RAILS_ENV=production
 volumes:
   asset-volume:
+
+networks:
+  nginx_proxy_stratas:
+    external: true
