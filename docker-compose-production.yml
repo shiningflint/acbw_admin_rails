@@ -24,10 +24,10 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: ${DB_NAME}
+    expose:
+      - "5432"
     networks:
       - nginx_proxy_stratas
-    ports:
-      - "5431:5432"
   app:
     build:
       context: .
@@ -36,8 +36,8 @@ services:
     command: >
       ash -c "bundle exec rake db:migrate
       && bundle exec puma -C config/puma.rb"
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     depends_on:
       - db
     volumes:
