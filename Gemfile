@@ -8,6 +8,10 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1'
+
+# Sprockets
+gem 'sprockets', '~>3.7.2'
+
 # Use postgresql
 gem 'pg', '0.21.0'
 
@@ -42,12 +46,12 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.8'
   gem 'capybara', '~> 2.13'
-  gem 'factory_bot_rails'
 end
 
 group :test do
   gem 'database_cleaner'
   gem 'rack_session_access'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
 end
 

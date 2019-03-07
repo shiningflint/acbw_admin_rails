@@ -11,6 +11,7 @@ services:
     expose:
       - "80"
     networks:
+      - default
       - nginx_proxy_stratas
     restart: always
     volumes:
@@ -26,8 +27,6 @@ services:
       POSTGRES_DB: ${DB_NAME}
     expose:
       - "5432"
-    networks:
-      - nginx_proxy_stratas
   app:
     build:
       context: .
@@ -42,8 +41,6 @@ services:
       - db
     volumes:
       - asset-volume:/app/public
-    networks:
-      - nginx_proxy_stratas
     env_file:
       - ./.env
     environment:
