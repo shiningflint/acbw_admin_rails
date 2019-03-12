@@ -2,7 +2,7 @@ class Markas::PostsController < Markas::ApplicationController
   before_action :validate_user, only: [:update, :create, :destroy]
 
   def index
-    @posts = Post.all.order(date: :desc)
+    @posts = Post.includes(:category).all.order(date: :desc)
   end
 
   def new
