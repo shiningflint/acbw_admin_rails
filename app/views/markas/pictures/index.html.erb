@@ -1,0 +1,16 @@
+<div class="content-wrap">
+  <div class="sidenav-wrap">
+    <%= render partial: "markas/common/adminnav" %>
+  </div>
+
+  <div class="main-wrap">
+    <div class="block block_nocolor block_nopadding">
+      <h1 id="posts-index" class="title">Pictures</h1>
+    </div>
+    <% flash.each do |key, message| %>
+      <div class="flash-notice"><%= message %></div>
+    <% end %>
+    <div class="tablewrap">
+    </div>
+  </div>
+</div>

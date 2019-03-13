@@ -24,7 +24,10 @@
     <% end %>
   </li>
   <li class="sidenav-item">
-    <%# link_to image_tag("settings_white.svg"), setting_path(1), class: "sidenav-icon sidenav-icon_active" %>
-    <%= link_to image_tag("settings.svg"), setting_path(1), class: "sidenav-icon" %>
+    <% if current_page?(markas_pictures_path) %>
+    <%= link_to image_tag("image_icon_white.svg"), markas_pictures_path, class: "sidenav-icon sidenav-icon_active", id: "nav-images" %>
+    <% else %>
+    <%= link_to image_tag("image_icon.svg"), markas_pictures_path, class: "sidenav-icon", id: "nav-images" %>
+    <% end %>
   </li>
 </ul>
